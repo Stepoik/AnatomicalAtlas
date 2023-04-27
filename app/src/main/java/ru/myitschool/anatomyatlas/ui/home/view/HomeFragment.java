@@ -48,11 +48,11 @@ public class HomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        binding.teaching.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                controller.navigate(R.id.action_homeFragment_to_teachFragment);
-            }
+        binding.teaching.setOnClickListener((v)->{
+                controller.navigate(R.id.action_homeFragment_to_studyFragment);
+        });
+        binding.training.setOnClickListener((v)->{
+            controller.navigate(R.id.action_homeFragment_to_quizFragment);
         });
     }
 }

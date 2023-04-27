@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Анатомический атлас</string>
+    <string name="cranium">Чeреп</string>
+    <string name="cranium_info">(лат. cranium) костная или хрящевая часть головы у позвоночных животных, каркас головы, защищающий от повреждения наиболее уязвимые органы и служащий местом прикрепления её мягких тканей. Он поддерживает структуры лица и создает защитную полость для мозга.</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="buy">Купить</string>
+    <string name="start">Начать</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="your_result">Ваш результат:</string>
+    <string name="result">Результат:</string>
+    <string name="back_to_home">Вернуться в главное меню</string>
+    <string name="again">Еще раз</string>
+    <string name="answer">Ответить</string>
 </resources>

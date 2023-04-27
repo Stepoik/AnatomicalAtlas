@@ -1,4 +1,4 @@
-package ru.myitschool.anatomyatlas.custom_views;
+package ru.myitschool.anatomyatlas.ui.custom_views;
 
 import android.graphics.Bitmap;
 

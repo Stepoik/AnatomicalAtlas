@@ -1,19 +1,25 @@
-package ru.myitschool.anatomyatlas.custom_views;
+package ru.myitschool.anatomyatlas.ui.custom_views;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.ArgbEvaluator;
+import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.SoundEffectConstants;
-import android.view.ViewParent;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.animation.Animation;
 import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
-import androidx.constraintlayout.widget.ConstraintLayout;
 
 import ru.myitschool.anatomyatlas.R;
 
@@ -21,7 +27,9 @@ public class StrangeView extends ImageView {
     private Bitmap bitmap;
     private Sprite sprite;
     private OnClickListener clickListener;
-    private String text;
+    private String name;
+    private String infoText;
+    private ObjectAnimator animator;
 
     public StrangeView(Context context) {
         super(context);
@@ -44,7 +52,8 @@ public class StrangeView extends ImageView {
 
     private void init(Context context, AttributeSet attrs) {
         TypedArray a = context.getTheme().obtainStyledAttributes(attrs, R.styleable.StrangeView, 0, 0);
-        text = a.getString(R.styleable.StrangeView_android_text);
+        name = a.getString(R.styleable.StrangeView_android_text);
+        infoText = a.getString(R.styleable.StrangeView_android_tooltipText);
         Drawable drawable = getDrawable();
         if (drawable != null) {
             if (drawable instanceof BitmapDrawable) {
@@ -60,13 +69,30 @@ public class StrangeView extends ImageView {
             }
             sprite = new Sprite(bitmap);
         }
+        animator = ObjectAnimator.ofInt(this,
+                "colorFilter",
+                Color.parseColor("#7D000000"),
+                Color.parseColor("#7DFFFFFF"),
+                Color.parseColor("#7D000000"));
+        animator.setDuration(1000);
+        animator.setEvaluator(new ArgbEvaluator());
+        animator.setRepeatCount(Animation.INFINITE);
+        animator.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                clearColorFilter();
+            }
+
+        });
     }
 
     public void onClick(MotionEvent event) {
         if (startPress(event)) {
             if (clickListener != null) {
-                playSoundEffect(SoundEffectConstants.CLICK);
-                clickListener.onClick(this);
+                if (getAlpha() > 0.5) {
+                    playSoundEffect(SoundEffectConstants.CLICK);
+                    clickListener.onClick(this);
+                }
             }
         }
     }
@@ -74,7 +100,7 @@ public class StrangeView extends ImageView {
     public boolean startPress(MotionEvent event) {
         float x = event.getX();
         float y = event.getY();
-        return sprite.isPressed((int) (x*(float)bitmap.getWidth()/getWidth()), (int) (y*(float)bitmap.getHeight()/getHeight()));
+        return sprite.isPressed((int) (x * (float) bitmap.getWidth() / getWidth()), (int) (y * (float) bitmap.getHeight() / getHeight()));
     }
 
     @Override
@@ -93,7 +119,21 @@ public class StrangeView extends ImageView {
         }
         return false;
     }
-    public String getText(){
-        return text;
+
+    public void startAnimation() {
+        animator.start();
     }
+
+    public void stopAnimation() {
+        animator.cancel();
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getInfo() {
+        return infoText;
+    }
+
 }

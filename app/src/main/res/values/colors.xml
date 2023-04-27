@@ -19,4 +19,7 @@
     <color name="main_light_blue">#79B3B7</color>
     <color name="toxic_green">#C1CD23</color>
     <color name="light_yellow">#DEE296</color>
+    <color name="light_blue_400">#FF29B6F6</color>
+    <color name="gray_400">#FFBDBDBD</color>
+    <color name="gray_600">#FF757575</color>
 </resources>

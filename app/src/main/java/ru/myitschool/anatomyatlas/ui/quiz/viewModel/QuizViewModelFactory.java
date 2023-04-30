@@ -11,13 +11,15 @@ import ru.myitschool.anatomyatlas.ui.quiz_start.viewModel.QuizStartViewModelFact
 
 public class QuizViewModelFactory implements ViewModelProvider.Factory {
     private Context context;
-    public QuizViewModelFactory(Context context){
+    private int progressMax;
+    public QuizViewModelFactory(Context context, int progressMax){
         this.context = context;
+        this.progressMax = progressMax;
     }
 
     @NonNull
     @Override
     public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
-        return (T) new QuizViewModel(new BodyPartRepository(context));
+        return (T) new QuizViewModel(new BodyPartRepository(context), progressMax);
     }
 }

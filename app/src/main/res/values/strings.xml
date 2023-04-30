@@ -13,4 +13,7 @@
     <string name="back_to_home">Вернуться в главное меню</string>
     <string name="again">Еще раз</string>
     <string name="answer">Ответить</string>
+    <string name="home">Home</string>
+    <string name="quiz">Quiz</string>
+    <string name="list">List</string>
 </resources>

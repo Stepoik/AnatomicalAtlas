@@ -3,69 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/routes"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/studyFragment">
 
-    <fragment
-        android:id="@+id/homeFragment"
-        android:name="ru.myitschool.anatomyatlas.ui.home.view.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
-        <action
-            android:id="@+id/action_homeFragment_to_studyFragment"
-            app:destination="@id/studyFragment"
-            app:enterAnim="@anim/right_slide_anim"
-            app:exitAnim="@anim/right_exit_slide_anim" />
-        <action
-            android:id="@+id/action_homeFragment_to_quizFragment"
-            app:destination="@id/quizStartFragment"
-            app:enterAnim="@anim/right_slide_anim"
-            app:exitAnim="@anim/right_exit_slide_anim" />
-    </fragment>
     <fragment
         android:id="@+id/studyFragment"
         android:name="ru.myitschool.anatomyatlas.ui.study.view.StudyFragment"
-        android:label="TeachFragment" />
+        android:label="TeachFragment" >
+        <action
+            android:id="@+id/action_studyFragment_to_quizStartFragment"
+            app:destination="@id/quizStartFragment" />
+    </fragment>
     <fragment
         android:id="@+id/quizStartFragment"
         android:name="ru.myitschool.anatomyatlas.ui.quiz_start.view.QuizStartFragment"
         android:label="fragment_quiz"
-        tools:layout="@layout/fragment_quiz_start" >
-        <action
-            android:id="@+id/action_quizStartFragment_to_quizFragment"
-            app:destination="@id/quizFragment"
-            app:enterAnim="@anim/right_slide_anim"
-            app:exitAnim="@anim/right_exit_slide_anim"
-            app:popUpTo="@id/homeFragment"
-            app:popUpToInclusive="true" />
-    </fragment>
+        tools:layout="@layout/fragment_quiz_start" />
     <fragment
-        android:id="@+id/quizFragment"
-        android:name="ru.myitschool.anatomyatlas.ui.quiz.view.QuizFragment"
-        android:label="fragment_quiz"
-        tools:layout="@layout/fragment_quiz" >
-        <action
-            android:id="@+id/action_quizFragment_to_resultFragment"
-            app:destination="@id/resultFragment"
-            app:popUpTo="@id/quizFragment"
-            app:popUpToInclusive="true" />
-        <action
-            android:id="@+id/action_quizFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/resultFragment"
-        android:name="ru.myitschool.anatomyatlas.ui.result.view.ResultFragment"
-        android:label="fragment_result"
-        tools:layout="@layout/fragment_result" >
-        <action
-            android:id="@+id/action_resultFragment_to_quizStartFragment"
-            app:destination="@id/quizStartFragment"
-            app:popUpTo="@id/resultFragment"
-            app:popUpToInclusive="true" />
-        <action
-            android:id="@+id/action_resultFragment_to_homeFragment"
-            app:destination="@id/homeFragment"
-            app:popUpTo="@id/resultFragment"
-            app:popUpToInclusive="true" />
-    </fragment>
+        android:id="@+id/listFragment"
+        android:name="ru.myitschool.anatomyatlas.ui.list.view.ListFragment"
+        android:label="fragment_list"
+        tools:layout="@layout/fragment_list" />
 </navigation>

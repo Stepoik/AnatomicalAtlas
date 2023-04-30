@@ -2,7 +2,9 @@ package ru.myitschool.anatomyatlas.ui.quiz_start.view;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
@@ -30,6 +32,7 @@ import ru.myitschool.anatomyatlas.R;
 import ru.myitschool.anatomyatlas.data.models.BodyPart;
 import ru.myitschool.anatomyatlas.data.models.Money;
 import ru.myitschool.anatomyatlas.databinding.FragmentQuizStartBinding;
+import ru.myitschool.anatomyatlas.ui.NavigateFromChild;
 import ru.myitschool.anatomyatlas.ui.UseSkeleton;
 import ru.myitschool.anatomyatlas.ui.custom_views.StrangeView;
 import ru.myitschool.anatomyatlas.ui.quiz_start.viewModel.QuizStartViewModel;
@@ -43,15 +46,14 @@ public class QuizStartFragment extends Fragment implements UseSkeleton {
     private StrangeView selectedView;
     private final int GREEN = Color.parseColor("#8209FF00");
     private Toast noMoneyToast;
-    private NavController controller;
     private int bodyCount = 0;
+    private FragmentActivity mainActivity;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        controller = NavHostFragment.findNavController(this);
         viewModel = new ViewModelProvider(this, new QuizStartViewModelFactory(getContext())).get(QuizStartViewModel.class);
         binding = FragmentQuizStartBinding.inflate(inflater, container, false);
         return binding.getRoot();
@@ -67,6 +69,7 @@ public class QuizStartFragment extends Fragment implements UseSkeleton {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        mainActivity = getActivity();
         noMoneyToast = Toast.makeText(getContext(), "Не хватает денег, требуется 10 монет", Toast.LENGTH_SHORT);
         viewModel.getBodyParts().observe(getViewLifecycleOwner(), bodyParts -> {
             clearFilters();
@@ -99,7 +102,10 @@ public class QuizStartFragment extends Fragment implements UseSkeleton {
         });
         binding.startButton.setOnClickListener(v -> {
             if (bodyCount >= 5) {
-                controller.navigate(R.id.action_quizStartFragment_to_quizFragment);
+                System.out.println(getActivity());
+                if (mainActivity instanceof NavigateFromChild){
+                    ((NavigateFromChild) mainActivity).navigate(R.id.action_homeFragment_to_quizFragment);
+                }
                 return;
             }
             Toast.makeText(getContext(), "У вас должно быть хотя бы 5 купленных частей тела", Toast.LENGTH_SHORT).show();

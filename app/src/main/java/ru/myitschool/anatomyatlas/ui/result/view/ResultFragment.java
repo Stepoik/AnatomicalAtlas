@@ -75,11 +75,11 @@ public class ResultFragment extends Fragment {
         dispatcher.addCallback(getViewLifecycleOwner(), new OnBackPressedCallback(true) {
             @Override
             public void handleOnBackPressed() {
-                controller.navigate(R.id.action_resultFragment_to_homeFragment);
+                controller.navigate(R.id.studyFragment);
             }
         });
         controller.setOnBackPressedDispatcher(dispatcher);
-        binding.again.setOnClickListener(v -> controller.navigate(R.id.action_resultFragment_to_quizStartFragment));
+        binding.again.setOnClickListener(v -> controller.navigate(R.id.action_resultFragment_to_quizFragment));
         binding.back.setOnClickListener(v -> controller.navigate(R.id.action_resultFragment_to_homeFragment));
         viewModel = new ViewModelProvider(this, new ResultViewModelFactory(getContext())).get(ResultViewModel.class);
         viewModel.getMoneyContainer().observe(getViewLifecycleOwner(), new Observer<Money>() {

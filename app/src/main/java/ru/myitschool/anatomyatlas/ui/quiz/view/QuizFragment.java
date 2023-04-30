@@ -15,6 +15,7 @@ import androidx.activity.OnBackPressedDispatcher;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
@@ -32,10 +33,8 @@ import ru.myitschool.anatomyatlas.ui.quiz.viewModel.QuizViewModel;
 import ru.myitschool.anatomyatlas.ui.quiz.viewModel.QuizViewModelFactory;
 
 public class QuizFragment extends Fragment implements UseSkeleton {
-    private Timer timer = new Timer();
     private FragmentQuizBinding binding;
     private QuizViewModel viewModel;
-    private boolean isPaused = false;
     private StrangeView selectedView;
     private NavController controller;
 
@@ -45,7 +44,7 @@ public class QuizFragment extends Fragment implements UseSkeleton {
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         binding = FragmentQuizBinding.inflate(inflater, container, false);
-        viewModel = new ViewModelProvider(this, new QuizViewModelFactory(getContext()))
+        viewModel = new ViewModelProvider(this, new QuizViewModelFactory(getContext(), 500))
                 .get(QuizViewModel.class);
         return binding.getRoot();
     }
@@ -78,6 +77,7 @@ public class QuizFragment extends Fragment implements UseSkeleton {
             }
         });
         controller.setOnBackPressedDispatcher(dispatcher);
+        viewModel.getProgress().observe(getViewLifecycleOwner(), progress -> binding.timer.setProgress(progress));
         viewModel.getBodyPartContainer().observe(getViewLifecycleOwner(), bodyParts -> {
             if (!viewModel.isShuffled()){
                 viewModel.shuffleData();
@@ -85,7 +85,7 @@ public class QuizFragment extends Fragment implements UseSkeleton {
             }
             if (bodyParts.size() > 0) {
                 binding.name.setText(bodyParts.get(0).getName());
-                startTimer();
+                viewModel.startTimer();
                 return;
             }
             Bundle data = new Bundle();
@@ -115,26 +115,7 @@ public class QuizFragment extends Fragment implements UseSkeleton {
         else if (usePausePanel){
             binding.pauseLayout.setVisibility(View.VISIBLE);
         }
-        isPaused = pause;
-    }
-    private void startTimer(){
-        Handler handler = new Handler(Looper.getMainLooper());
-        binding.timer.setProgress(500);
-        timer.cancel();
-        timer = new Timer();
-        timer.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                if (isPaused){
-                    return;
-                }
-                if (binding.timer.getProgress() == 0){
-                    timer.cancel();
-                    handler.post(() -> select(null));
-                }
-                binding.timer.setProgress(binding.timer.getProgress()-1, true);
-            }
-        }, 0, 30);
+        viewModel.setPause(pause);
     }
     private void makeViewsClickable(List<ViewGroup> views){
         for (ViewGroup viewGroup: views){
@@ -163,13 +144,12 @@ public class QuizFragment extends Fragment implements UseSkeleton {
             selectedView = null;
         }
         binding.answer.setVisibility(View.GONE);
-        if (viewModel.select(name)){
-            return;
-        }
+        viewModel.select(name);
     }
 
     @Override
     public void onLoadChildFragment(List<ViewGroup> views) {
         makeViewsClickable(views);
     }
+
 }

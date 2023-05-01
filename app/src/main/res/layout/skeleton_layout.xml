@@ -636,7 +636,7 @@
         android:adjustViewBounds="true"
         android:maxWidth="150dp"
         android:maxHeight="150dp"
-        android:text="Skull Mandible"
+        android:text="Mandible"
         android:scaleType="fitCenter"
         android:src="@drawable/skull_mandible"
         app:layout_constraintEnd_toEndOf="parent"

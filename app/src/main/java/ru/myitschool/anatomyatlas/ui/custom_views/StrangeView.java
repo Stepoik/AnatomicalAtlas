@@ -100,7 +100,7 @@ public class StrangeView extends ImageView {
     public boolean startPress(MotionEvent event) {
         float x = event.getX();
         float y = event.getY();
-        return sprite.isPressed((int) (x * (float) bitmap.getWidth() / getWidth()), (int) (y * (float) bitmap.getHeight() / getHeight()));
+        return sprite.isPressed((int) (x * (float) bitmap.getWidth() / getWidth()), (int) (y * (float) bitmap.getHeight() / getHeight())) && getAlpha() > 0.5;
     }
 
     @Override

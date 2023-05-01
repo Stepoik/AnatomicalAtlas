@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -18,4 +19,512 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+        android:id="@+id/organs_nasopharynx"
+        android:layout_width="19dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="38dp"
+        android:adjustViewBounds="true"
+        android:maxWidth="150dp"
+        android:maxHeight="150dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/organs_nasopharynx"
+        android:text="Nasopharynx"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+        android:id="@+id/organs_ethmoid_aircells"
+        android:layout_width="28dp"
+        android:layout_height="12dp"
+        android:layout_marginTop="42dp"
+        android:adjustViewBounds="true"
+        android:maxWidth="150dp"
+        android:maxHeight="150dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/organs_ethmoid_aircells"
+        android:text="Ethmoid aircells"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+        android:id="@+id/organs_maxillary_sinus"
+        android:layout_width="40dp"
+        android:layout_height="17dp"
+        android:layout_marginTop="50dp"
+        android:adjustViewBounds="true"
+        android:maxWidth="150dp"
+        android:maxHeight="150dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/organs_maxillary_sinus"
+        android:text="Maxillary sinus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+        android:id="@+id/organs_parotid_salivary_gland"
+        android:layout_width="59dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="58dp"
+        android:adjustViewBounds="true"
+        android:maxWidth="150dp"
+        android:maxHeight="150dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/organs_parotid_salivary_gland"
+        android:text="Parotid salivary gland"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+        android:id="@+id/organs_mouth"
+        android:layout_width="47dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="68dp"
+        android:adjustViewBounds="true"
+        android:maxWidth="150dp"
+        android:maxHeight="150dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/organs_mouth"
+        android:text="Mouth"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+        android:id="@+id/organs_tongue"
+        android:layout_width="25dp"
+        android:layout_height="8dp"
+        android:layout_marginTop="77dp"
+        android:adjustViewBounds="true"
+        android:maxWidth="150dp"
+        android:maxHeight="150dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/organs_tongue"
+        android:text="Tongue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+        android:id="@+id/organs_submandibular_salivary_gland"
+        android:layout_width="44dp"
+        android:layout_height="11dp"
+        android:layout_marginTop="87dp"
+        android:adjustViewBounds="true"
+        android:maxWidth="150dp"
+        android:maxHeight="150dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/organs_submandibular_salivary_gland"
+        android:text="Submandibular salivary gland"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+        android:id="@+id/organs_epiglottis"
+        android:layout_width="10dp"
+        android:layout_height="8dp"
+        android:layout_marginTop="92dp"
+        android:adjustViewBounds="true"
+        android:maxWidth="150dp"
+        android:maxHeight="150dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/organs_epiglottis"
+        android:text="Epiglottis"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+        android:id="@+id/organs_larynx"
+        android:layout_width="10dp"
+        android:layout_height="8dp"
+        android:layout_marginTop="92dp"
+        android:adjustViewBounds="true"
+        android:maxWidth="150dp"
+        android:maxHeight="150dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/organs_larynx"
+        android:text="Larynx"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+        android:id="@+id/organs_hyoepiglottic_ligament"
+        android:layout_width="4dp"
+        android:layout_height="4dp"
+        android:layout_marginTop="92dp"
+        android:adjustViewBounds="true"
+        android:maxWidth="150dp"
+        android:maxHeight="150dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/organs_hyoepiglottic_ligament"
+        android:text="Hyoepiglottic ligament"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+        android:id="@+id/organs_thyrohyoid_membrane"
+        android:layout_width="23dp"
+        android:layout_height="15dp"
+        android:layout_marginTop="93dp"
+        android:adjustViewBounds="true"
+        android:maxWidth="150dp"
+        android:maxHeight="150dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/organs_thyrohyoid_membrane"
+        android:text="Thyrohyoid membrane"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+        android:id="@+id/organs_thyroid_cartilage"
+        android:layout_width="23dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="93dp"
+        android:adjustViewBounds="true"
+        android:maxWidth="150dp"
+        android:maxHeight="150dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/organs_thyroid_cartilage"
+        android:text="Thyroid cartilage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+        android:id="@+id/organs_cricothyroid_ligament"
+        android:layout_width="18dp"
+        android:layout_height="10dp"
+        android:layout_marginTop="118dp"
+        android:adjustViewBounds="true"
+        android:maxWidth="150dp"
+        android:maxHeight="150dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/organs_cricothyroid_ligament"
+        android:text="Cricothyroid ligament"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+        android:id="@+id/organs_cricoid_cartilage"
+        android:layout_width="18dp"
+        android:layout_height="10dp"
+        android:layout_marginTop="121dp"
+        android:adjustViewBounds="true"
+        android:maxWidth="150dp"
+        android:maxHeight="150dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/organs_cricoid_cartilage"
+        android:text="Cricoid cartilage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+        android:id="@+id/organs_thyroid_gland"
+        android:layout_width="20dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="119dp"
+        android:adjustViewBounds="true"
+        android:maxWidth="150dp"
+        android:maxHeight="150dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/organs_thyroid_gland"
+        android:text="Thyroid gland"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+        android:id="@+id/organs_trachea"
+        android:layout_width="9dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="140dp"
+        android:adjustViewBounds="true"
+        android:maxWidth="150dp"
+        android:maxHeight="150dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/organs_trachea"
+        android:text="Trachea"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+        android:id="@+id/organs_pleura"
+        android:layout_width="102dp"
+        android:layout_height="132dp"
+        android:layout_marginTop="140dp"
+        android:adjustViewBounds="true"
+        android:maxWidth="150dp"
+        android:maxHeight="150dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/organs_pleura"
+        android:text="Pleura"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+        android:id="@+id/organs_thymus"
+        android:layout_width="12dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="164dp"
+        android:adjustViewBounds="true"
+        android:layout_marginStart="47dp"
+        android:maxWidth="150dp"
+        android:maxHeight="150dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/organs_thymus"
+        android:text="Thymus"
+        app:layout_constraintStart_toStartOf="@+id/organs_pleura"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+        android:id="@+id/organs_bronchus"
+        android:layout_width="10dp"
+        android:layout_height="9dp"
+        android:layout_marginTop="177dp"
+        android:adjustViewBounds="true"
+        android:layout_marginStart="53dp"
+        android:maxWidth="150dp"
+        android:maxHeight="150dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/organs_bronchus"
+        android:text="Bronchus"
+        app:layout_constraintHorizontal_bias="0.576"
+        app:layout_constraintStart_toStartOf="@+id/organs_pleura"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+        android:id="@+id/organs_esophagus"
+        android:layout_width="8dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="188dp"
+        android:adjustViewBounds="true"
+        android:maxWidth="150dp"
+        android:maxHeight="150dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/organs_esophagus"
+        android:text="Esophagus"
+        app:layout_constraintStart_toStartOf="@+id/organs_pleura"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+        android:id="@+id/organs_liver"
+        android:layout_width="70dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="225dp"
+        android:adjustViewBounds="true"
+        android:maxWidth="150dp"
+        android:maxHeight="150dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/organs_liver"
+        android:text="Liver"
+        app:layout_constraintStart_toStartOf="@+id/organs_pleura"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+        android:id="@+id/organs_stomach"
+        android:layout_width="55dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="239dp"
+        android:adjustViewBounds="true"
+        android:maxWidth="150dp"
+        android:maxHeight="150dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/organs_stomach"
+        android:text="Stomach"
+        app:layout_constraintStart_toStartOf="@+id/organs_pleura"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+        android:id="@+id/organs_spleen"
+        android:layout_width="9dp"
+        android:layout_height="17dp"
+        android:layout_marginStart="81dp"
+        android:layout_marginTop="251dp"
+        android:adjustViewBounds="true"
+        android:maxWidth="150dp"
+        android:maxHeight="150dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/organs_spleen"
+        android:text="Spleen"
+        app:layout_constraintStart_toStartOf="@+id/organs_pleura"
+        app:layout_constraintTop_toTopOf="parent" />
+    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+        android:id="@+id/organs_pancreas"
+        android:layout_width="23dp"
+        android:layout_height="17dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="265dp"
+        android:adjustViewBounds="true"
+        android:maxWidth="150dp"
+        android:maxHeight="150dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/organs_pancreas"
+        android:text="Pancreas"
+        app:layout_constraintStart_toStartOf="@+id/organs_pleura"
+        app:layout_constraintTop_toTopOf="parent" />
+    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+        android:id="@+id/organs_gallbladder"
+        android:layout_width="13dp"
+        android:layout_height="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="265dp"
+        android:adjustViewBounds="true"
+        android:maxWidth="150dp"
+        android:maxHeight="150dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/organs_gallbladder"
+        android:text="Gallbladder"
+        app:layout_constraintStart_toStartOf="@+id/organs_pleura"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+        android:id="@+id/organs_intestine_duodenum"
+        android:layout_width="36dp"
+        android:layout_height="17dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="271dp"
+        android:adjustViewBounds="true"
+        android:maxWidth="150dp"
+        android:maxHeight="150dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/organs_intestine_duodenum"
+        android:text="Intestine duodenum"
+        app:layout_constraintStart_toStartOf="@+id/organs_pleura"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+        android:id="@+id/organs_transverse_colon"
+        android:layout_width="88dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="265dp"
+        android:adjustViewBounds="true"
+        android:maxWidth="150dp"
+        android:maxHeight="150dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/organs_transverse_colon"
+        android:text="Transverse colon"
+        app:layout_constraintStart_toStartOf="@+id/organs_pleura"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+        android:id="@+id/organs_small_intestine_jejunum"
+        android:layout_width="40dp"
+        android:layout_height="79dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="271dp"
+        android:adjustViewBounds="true"
+        android:maxWidth="150dp"
+        android:maxHeight="150dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/organs_small_intestine_jejunum"
+        android:text="Small intestine jejunum"
+        app:layout_constraintStart_toStartOf="@+id/organs_pleura"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+        android:id="@+id/organs_large_intestine_descending_colon"
+        android:layout_width="22dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="276dp"
+        android:adjustViewBounds="true"
+        android:maxWidth="150dp"
+        android:maxHeight="150dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/organs_large_intestine_descending_colon"
+        android:text="Large intestine descending colon"
+        app:layout_constraintStart_toStartOf="@+id/organs_pleura"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+        android:id="@+id/organs_sigmoid_colon"
+        android:layout_width="40dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="336dp"
+        android:adjustViewBounds="true"
+        android:maxWidth="150dp"
+        android:maxHeight="150dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/organs_sigmoid_colon"
+        android:text="Sigmoid colon"
+        app:layout_constraintStart_toStartOf="@+id/organs_pleura"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+        android:id="@+id/organs_small_intestine_ileum"
+        android:layout_width="64dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="289dp"
+        android:adjustViewBounds="true"
+        android:maxWidth="150dp"
+        android:maxHeight="150dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/organs_small_intestine_ileum"
+        android:text="Small intestine ileum"
+        app:layout_constraintStart_toStartOf="@+id/organs_pleura"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+        android:id="@+id/organs_ascending_colon"
+        android:layout_width="17dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="284dp"
+        android:adjustViewBounds="true"
+        android:maxWidth="150dp"
+        android:maxHeight="150dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/organs_ascending_colon"
+        android:text="Ascending colon"
+        app:layout_constraintStart_toStartOf="@+id/organs_pleura"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+        android:id="@+id/organs_large_intestine_cecum"
+        android:layout_width="19dp"
+        android:layout_height="18dp"
+        android:layout_marginTop="331dp"
+        android:adjustViewBounds="true"
+        android:maxWidth="150dp"
+        android:maxHeight="150dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/organs_large_intestine_cecum"
+        android:text="Large intestine cecum"
+        app:layout_constraintStart_toStartOf="@+id/organs_pleura"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+        android:id="@+id/organs_appendix"
+        android:layout_width="12dp"
+        android:layout_height="13dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="348dp"
+        android:adjustViewBounds="true"
+        android:maxWidth="150dp"
+        android:maxHeight="150dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/organs_appendix"
+        android:text="Appendix"
+        app:layout_constraintStart_toStartOf="@+id/organs_pleura"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

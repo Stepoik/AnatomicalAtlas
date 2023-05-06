@@ -32,6 +32,7 @@ abstract public class AppDatabase extends RoomDatabase {
                 if (INSTANCE == null){
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(), AppDatabase.class,
                             "app_database")
+                            .createFromAsset("body_parts.db")
                             .build();
                 }
             }

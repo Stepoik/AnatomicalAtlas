@@ -89,7 +89,7 @@ public class StrangeView extends ImageView {
     public void onClick(MotionEvent event) {
         if (startPress(event)) {
             if (clickListener != null) {
-                if (getAlpha() > 0.5) {
+                if (getAlpha() > 0.5 && ((View)getParent()).getAlpha() > 0.5) {
                     playSoundEffect(SoundEffectConstants.CLICK);
                     clickListener.onClick(this);
                 }
@@ -100,7 +100,9 @@ public class StrangeView extends ImageView {
     public boolean startPress(MotionEvent event) {
         float x = event.getX();
         float y = event.getY();
-        return sprite.isPressed((int) (x * (float) bitmap.getWidth() / getWidth()), (int) (y * (float) bitmap.getHeight() / getHeight())) && getAlpha() > 0.5;
+        return sprite.isPressed((int) (x * (float) bitmap.getWidth() / getWidth()), (int) (y * (float) bitmap.getHeight() / getHeight()))
+                && getAlpha() > 0.5
+                && ((View)getParent()).getAlpha() > 0.5;
     }
 
     @Override

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:drawable="@color/pink"/>
-    <item android:drawable="@drawable/coin" android:gravity="center"
-        android:width="100dp"
-        android:height="100dp"/>
+    <item android:drawable="@color/main_light_blue"/>
+    <item android:drawable="@drawable/loading_screen" android:gravity="center" />
+    <item android:drawable="@drawable/loading_screen_text" android:gravity="center"/>
 </layer-list>

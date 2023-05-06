@@ -43,6 +43,14 @@ public class StudyFragment extends Fragment implements UseSkeleton {
         return binding.getRoot();
     }
     private void subscribe(List<ViewGroup> layouts){
+        binding.bottomInfo.contentScrollView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                binding.bottomInfo.contentScrollView.onTouchEvent(event);
+                binding.bottomInfo.contentScrollView.requestDisallowInterceptTouchEvent(true);
+                return true;
+            }
+        });
         viewModel.getSelectedIdContainer().observe(getViewLifecycleOwner(), id -> {
             View v = binding.getRoot().findViewById(id);
             binding.bottomInfo.name.setText(((StrangeView)v).getName());
@@ -54,7 +62,11 @@ public class StudyFragment extends Fragment implements UseSkeleton {
                 }
             }
             ((StrangeView)v).startAnimation();
-            bottomSheetBehavior.setState(BottomSheetBehavior.STATE_HALF_EXPANDED);
+            System.out.println(bottomSheetBehavior.getState());
+            if (bottomSheetBehavior.getState() == BottomSheetBehavior.STATE_COLLAPSED ||
+                    bottomSheetBehavior.getState() == BottomSheetBehavior.STATE_HIDDEN){
+                bottomSheetBehavior.setState(BottomSheetBehavior.STATE_HALF_EXPANDED);
+            }
         });
     }
 
@@ -62,7 +74,8 @@ public class StudyFragment extends Fragment implements UseSkeleton {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         bottomSheetBehavior = BottomSheetBehavior.from(binding.bottomInfo.getRoot());
-        bottomSheetBehavior.setHalfExpandedRatio(0.3f);
+        bottomSheetBehavior.setHalfExpandedRatio(250f/getResources().getDisplayMetrics().heightPixels);
+        bottomSheetBehavior.setMaxHeight((int)(getResources().getDisplayMetrics().heightPixels*0.6));
         bottomSheetBehavior.addBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
             @Override
             public void onStateChanged(@NonNull View bottomSheet, int newState) {

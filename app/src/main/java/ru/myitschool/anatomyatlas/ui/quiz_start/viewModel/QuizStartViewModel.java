@@ -1,6 +1,7 @@
 package ru.myitschool.anatomyatlas.ui.quiz_start.viewModel;
 
 import androidx.lifecycle.LiveData;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModel;
 
 import java.util.List;
@@ -11,14 +12,15 @@ import ru.myitschool.anatomyatlas.data.repositories.BodyPartRepository;
 import ru.myitschool.anatomyatlas.data.repositories.MoneyRepository;
 
 public class QuizStartViewModel extends ViewModel {
-    private BodyPartRepository bodyPartRepository;
-    private MoneyRepository moneyRepository;
-    private LiveData<List<BodyPart>> bodyPartContainer;
-    private LiveData<Money> moneyContainer;
+    private final BodyPartRepository bodyPartRepository;
+    private final MoneyRepository moneyRepository;
+    private final LiveData<List<BodyPart>> bodyPartContainer;
+    private final LiveData<Money> moneyContainer;
+    private final int COST = 10;
     public QuizStartViewModel(BodyPartRepository repository, MoneyRepository moneyRepository){
         bodyPartRepository = repository;
         this.moneyRepository = moneyRepository;
-        bodyPartContainer = bodyPartRepository.getAllBodyParts();
+        bodyPartContainer = bodyPartRepository.getOpenedBodyParts();
         moneyContainer = moneyRepository.getMoney();
     }
     public LiveData<List<BodyPart>> getBodyParts(){
@@ -28,9 +30,9 @@ public class QuizStartViewModel extends ViewModel {
         if (moneyContainer.getValue() == null){
             return false;
         }
-        if (moneyContainer.getValue().getValue() >= 10) {
-            moneyRepository.updateMoney(new Money(moneyContainer.getValue().getValue()-10));
-            bodyPartRepository.addBodyPart(new BodyPart(name));
+        if (moneyContainer.getValue().getValue() >= COST) {
+            moneyRepository.updateMoney(new Money(moneyContainer.getValue().getValue()-COST));
+            bodyPartRepository.openBodyPart(name);
             return true;
         }
         return false;

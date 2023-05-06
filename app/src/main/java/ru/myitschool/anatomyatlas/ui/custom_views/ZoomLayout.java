@@ -109,6 +109,7 @@ public class ZoomLayout extends ConstraintLayout {
         private float currentMinY = MIN_Y;
         private float currentScale = 1;
         private ViewGroup layout;
+        private int pointerCount = 0;
         public void setLayout(ViewGroup layout){
             this.layout = layout;
         }
@@ -141,7 +142,11 @@ public class ZoomLayout extends ConstraintLayout {
 
         @Override
         public boolean onTouch(View v, MotionEvent event) {
-            if (event.getPointerCount() < 2) {
+            System.out.println(event);
+            if (event.getAction() == MotionEvent.ACTION_DOWN || event.getPointerCount() > pointerCount){
+                pointerCount = event.getPointerCount();
+            }
+            if (pointerCount < 2) {
                 gestureDetector.onTouchEvent(event);
             }
             else{
@@ -159,7 +164,6 @@ public class ZoomLayout extends ConstraintLayout {
 //            float currentPivotX = layout.getPivotX();
             layout.setX(xNew);
             layout.setY(yNew);
-            System.out.println(layout.getX());
             layout.setPivotX(layout.getPivotX()+xChange);
             layout.setPivotY(layout.getPivotY()+yChange);
             return super.onScroll(e1, e2, distanceX, distanceY);

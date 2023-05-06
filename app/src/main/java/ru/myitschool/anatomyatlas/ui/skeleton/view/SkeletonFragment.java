@@ -26,8 +26,8 @@ public class SkeletonFragment extends Fragment {
     private FragmentSkeletonBinding binding;
     private SkeletonViewModel viewModel;
     private final int SKELETON_PROGRESS = 100;
-    private final int ORGANS_PROGRESS = 50;
-    private final int PROGRESS_VISIBLE = 35;
+    private final int ORGANS_PROGRESS = 0;
+    private final int PROGRESS_VISIBLE = 50;
 
     @Nullable
     @Override
@@ -70,14 +70,8 @@ public class SkeletonFragment extends Fragment {
             @Override
             public void onChanged(Integer integer) {
                 binding.seekBar.setProgress(integer);
-                for (int i = 0; i < binding.skeleton.getRoot().getChildCount(); i++){
-                    ((ImageView)binding.skeleton.getRoot().getChildAt(i))
-                            .setAlpha((float)((PROGRESS_VISIBLE-Math.abs(SKELETON_PROGRESS-integer)))/PROGRESS_VISIBLE);
-                }
-                for (int i = 0; i < binding.organs.getRoot().getChildCount(); i++){
-                    ((ImageView)binding.organs.getRoot()
-                            .getChildAt(i)).setAlpha((float)((PROGRESS_VISIBLE-Math.abs(ORGANS_PROGRESS-integer)))/PROGRESS_VISIBLE);
-                }
+                binding.skeleton.getRoot().setAlpha((float)((PROGRESS_VISIBLE-Math.abs(SKELETON_PROGRESS-integer)))/PROGRESS_VISIBLE);
+                binding.organs.getRoot().setAlpha((float)((PROGRESS_VISIBLE-Math.abs(ORGANS_PROGRESS-integer)))/PROGRESS_VISIBLE);
             }
         });
         viewModel.setProgress(100);

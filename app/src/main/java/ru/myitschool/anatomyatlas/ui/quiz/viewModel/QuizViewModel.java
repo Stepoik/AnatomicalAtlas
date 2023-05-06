@@ -20,7 +20,7 @@ import ru.myitschool.anatomyatlas.data.repositories.BodyPartRepository;
 
 public class QuizViewModel extends ViewModel {
     private final BodyPartRepository bodyPartRepository;
-    private MutableLiveData<List<BodyPart>> bodyPartContainer;
+    private final MutableLiveData<List<BodyPart>> bodyPartContainer;
     private boolean shuffled = false;
     private int score = 0;
     private int counter = 0;
@@ -33,7 +33,7 @@ public class QuizViewModel extends ViewModel {
     public QuizViewModel(BodyPartRepository bodyPartRepository, int progressMax) {
         this.progressMax = progressMax;
         this.bodyPartRepository = bodyPartRepository;
-        bodyPartContainer = (MutableLiveData<List<BodyPart>>)bodyPartRepository.getAllBodyParts();
+        bodyPartContainer = (MutableLiveData<List<BodyPart>>)bodyPartRepository.getOpenedBodyParts();
     }
 
     public LiveData<List<BodyPart>> getBodyPartContainer() {

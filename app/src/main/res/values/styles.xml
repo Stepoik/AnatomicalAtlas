@@ -6,6 +6,8 @@
     </style>
 
     <style name="CircleProgressBar" parent="Widget.AppCompat.ProgressBar.Horizontal">
-        <item name="android:progressDrawable"></item>
+    </style>
+    <style name="StyleGovna">
+        <item name="android:background">@drawable/body_part_list_ripple</item>
     </style>
 </resources>

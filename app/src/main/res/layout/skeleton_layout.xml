@@ -621,7 +621,7 @@
         android:maxWidth="150dp"
         android:maxHeight="150dp"
         android:scaleType="fitCenter"
-        android:text="@string/cranium"
+        android:text="Cranium"
         android:tooltipText="@string/cranium_info"
         android:src="@drawable/skull_cranium"
         app:layout_constraintEnd_toEndOf="parent"

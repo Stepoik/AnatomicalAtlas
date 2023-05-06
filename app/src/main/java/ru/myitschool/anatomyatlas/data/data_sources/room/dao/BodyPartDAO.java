@@ -19,4 +19,10 @@ public interface BodyPartDAO {
     void addBodyPart(BodyPartEntity bodyPart);
     @Query("Delete from BodyPartEntity")
     void clear();
+    @Query("select * from BodyPartEntity where name = :name")
+    LiveData<BodyPartEntity> getBodyPartByName(String name);
+    @Query("update BodyPartEntity set isOpened = \"true\" where name = :name")
+    void setOpened(String name);
+    @Query("select * from BodyPartEntity where isOpened = \"true\"")
+    LiveData<List<BodyPartEntity>> getOpenedBodyParts();
 }

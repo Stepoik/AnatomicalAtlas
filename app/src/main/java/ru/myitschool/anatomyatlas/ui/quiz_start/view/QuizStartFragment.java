@@ -27,6 +27,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.stream.Collectors;
 
 import ru.myitschool.anatomyatlas.R;
 import ru.myitschool.anatomyatlas.data.models.BodyPart;
@@ -102,7 +103,6 @@ public class QuizStartFragment extends Fragment implements UseSkeleton {
         });
         binding.startButton.setOnClickListener(v -> {
             if (bodyCount >= 5) {
-                System.out.println(getActivity());
                 if (mainActivity instanceof NavigateFromChild){
                     ((NavigateFromChild) mainActivity).navigate(R.id.action_homeFragment_to_quizFragment);
                 }

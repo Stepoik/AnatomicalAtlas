@@ -13,7 +13,7 @@ import ru.myitschool.anatomyatlas.data.models.BodyPart;
 
 @Dao
 public interface BodyPartDAO {
-    @Query("select * from BodyPartEntity")
+    @Query("select * from BodyPartEntity order by name")
     LiveData<List<BodyPartEntity>> getAllBodyParts();
     @Insert
     void addBodyPart(BodyPartEntity bodyPart);
@@ -25,4 +25,6 @@ public interface BodyPartDAO {
     void setOpened(String name);
     @Query("select * from BodyPartEntity where isOpened = \"true\"")
     LiveData<List<BodyPartEntity>> getOpenedBodyParts();
+    @Query("select * from BodyPartEntity where name like :name order by name")
+    LiveData<List<BodyPartEntity>> searchBodyParts(String name);
 }

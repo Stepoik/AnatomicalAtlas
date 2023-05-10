@@ -8,14 +8,13 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
 
-import java.util.List;
-
-import ru.myitschool.anatomyatlas.data.models.BodyPart;
+import ru.myitschool.anatomyatlas.R;
 import ru.myitschool.anatomyatlas.databinding.FragmentListBinding;
-import ru.myitschool.anatomyatlas.ui.adapters.BodyPartGroupAdapter;
+import ru.myitschool.anatomyatlas.ui.adapters.BodyPartGroupListAdapter;
 import ru.myitschool.anatomyatlas.ui.list.viewModel.ListViewModel;
 import ru.myitschool.anatomyatlas.ui.list.viewModel.ListViewModelFactory;
 
@@ -23,7 +22,8 @@ import ru.myitschool.anatomyatlas.ui.list.viewModel.ListViewModelFactory;
 public class ListFragment extends Fragment {
     private FragmentListBinding binding;
     private ListViewModel viewModel;
-    private BodyPartGroupAdapter adapter;
+    private BodyPartGroupListAdapter adapter;
+    private NavController controller;
 
     @Nullable
     @Override
@@ -39,10 +39,17 @@ public class ListFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        controller = NavHostFragment.findNavController(this);
         viewModel = new ViewModelProvider(this, new ListViewModelFactory(getContext()))
                 .get(ListViewModel.class);
-        adapter = new BodyPartGroupAdapter(viewModel, getViewLifecycleOwner());
+        adapter = new BodyPartGroupListAdapter(viewModel, getViewLifecycleOwner());
         viewModel.getBodyPartContainer().observe(getViewLifecycleOwner(), bodyParts -> adapter.setData(bodyParts));
         binding.informationList.setAdapter(adapter);
+        binding.search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                controller.navigate(R.id.action_listFragment_to_searchFragment);
+            }
+        });
     }
 }

@@ -8,7 +8,6 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.LifecycleOwner;
-import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -20,14 +19,14 @@ import java.util.Set;
 import ru.myitschool.anatomyatlas.R;
 import ru.myitschool.anatomyatlas.data.models.BodyPart;
 
-public class BodyPartAdapter extends RecyclerView.Adapter<BodyPartAdapter.BodyPartViewHolder> {
+public class BodyPartListAdapter extends RecyclerView.Adapter<BodyPartListAdapter.BodyPartViewHolder> {
     private List<BodyPart> bodyPartList = new ArrayList<>();
     private final Map<Integer, BodyPartViewHolder> viewHolderMap = new HashMap<>();
     private final ListOpener listOpener;
     private final int parentIndex;
     private final LifecycleOwner lifecycleOwner;
 
-    public BodyPartAdapter(ListOpener listOpener, int parentIndex, LifecycleOwner lifecycleOwner) {
+    public BodyPartListAdapter(ListOpener listOpener, int parentIndex, LifecycleOwner lifecycleOwner) {
         this.listOpener = listOpener;
         this.parentIndex = parentIndex;
         this.lifecycleOwner = lifecycleOwner;

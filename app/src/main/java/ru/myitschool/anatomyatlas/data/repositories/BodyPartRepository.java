@@ -44,4 +44,8 @@ public class BodyPartRepository{
             return value.toDomainModel();
         });
     }
+    public LiveData<List<BodyPart>> searchBodyPartByName(String name){
+        return Transformations.map(sourceDatabase.bodyPartDAO()
+                .searchBodyParts(name+"%"), (values)->values.stream().map(BodyPartEntity::toDomainModel).collect(Collectors.toList()));
+    }
 }

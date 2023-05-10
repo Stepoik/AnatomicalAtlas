@@ -1,7 +1,6 @@
 package ru.myitschool.anatomyatlas.ui.adapters;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,29 +8,25 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.LifecycleOwner;
-import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 import ru.myitschool.anatomyatlas.R;
 import ru.myitschool.anatomyatlas.data.models.BodyPart;
 
-public class BodyPartGroupAdapter extends RecyclerView.Adapter<BodyPartGroupAdapter.GroupBodyPartViewHolder> {
+public class BodyPartGroupListAdapter extends RecyclerView.Adapter<BodyPartGroupListAdapter.GroupBodyPartViewHolder> {
     List<String> groups = new ArrayList<>();
     private final Map<String, List<BodyPart>> elements = new HashMap<>();
     private final Map<Integer, GroupBodyPartViewHolder> viewHolderMap = new HashMap<>();
     private final ListOpener listOpener;
     private final LifecycleOwner lifecycleOwner;
 
-    public BodyPartGroupAdapter(ListOpener listOpener, LifecycleOwner lifecycleOwner){
+    public BodyPartGroupListAdapter(ListOpener listOpener, LifecycleOwner lifecycleOwner){
         this.listOpener = listOpener;
         this.lifecycleOwner = lifecycleOwner;
     }
@@ -47,7 +42,7 @@ public class BodyPartGroupAdapter extends RecyclerView.Adapter<BodyPartGroupAdap
     public void onBindViewHolder(@NonNull GroupBodyPartViewHolder holder, int position) {
         viewHolderMap.put(position, holder);
         holder.groupName.setText(groups.get(position));
-        BodyPartAdapter bodyPartAdapter = new BodyPartAdapter(listOpener, position, lifecycleOwner);
+        BodyPartListAdapter bodyPartAdapter = new BodyPartListAdapter(listOpener, position, lifecycleOwner);
         List<BodyPart> bodyParts = elements.get(groups.get(position));
         if (bodyParts != null) {
             bodyPartAdapter.setList(new ArrayList<>(bodyParts));

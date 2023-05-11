@@ -7,7 +7,7 @@
     android:clipChildren="false"
     android:theme="@style/ThemeOverlay.AnatomyAtlas.FullscreenContainer">
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skull_scapula"
         android:layout_width="140dp"
         android:layout_height="69dp"
@@ -22,7 +22,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_metacarpal1"
         android:layout_width="253dp"
         android:layout_height="19dp"
@@ -36,7 +36,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_metacarpal2"
         android:layout_width="249dp"
         android:layout_height="39dp"
@@ -50,7 +50,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_metacarpal3"
         android:layout_width="226dp"
         android:layout_height="29.8dp"
@@ -65,7 +65,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_metacarpal4"
         android:layout_width="205dp"
         android:layout_height="27dp"
@@ -79,7 +79,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_metacarpal5"
         android:layout_width="198dp"
         android:layout_height="25dp"
@@ -93,7 +93,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_proximal_phalanx_hand1"
         android:layout_width="265dp"
         android:layout_height="19dp"
@@ -107,7 +107,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_proximal_phalanx_hand2"
         android:layout_width="255dp"
         android:layout_height="20dp"
@@ -121,7 +121,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_proximal_phalanx_hand3"
         android:layout_width="231dp"
         android:layout_height="24dp"
@@ -135,7 +135,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_proximal_phalanx_hand4"
         android:layout_width="204dp"
         android:layout_height="21.52dp"
@@ -149,7 +149,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_proximal_phalanx_hand5"
         android:layout_width="188dp"
         android:layout_height="18dp"
@@ -163,7 +163,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_middle_phalanx_hand2"
         android:layout_width="260dp"
         android:layout_height="19dp"
@@ -177,7 +177,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_middle_phalanx_hand3"
         android:layout_width="232dp"
         android:layout_height="14dp"
@@ -191,7 +191,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_middle_phalanx_hand4"
         android:layout_width="203.7dp"
         android:layout_height="14dp"
@@ -205,7 +205,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_middle_phalanx_hand5"
         android:layout_width="187dp"
         android:layout_height="14dp"
@@ -219,7 +219,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_distal_phalanx_hand1"
         android:layout_width="269dp"
         android:layout_height="12dp"
@@ -233,7 +233,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_distal_phalanx_hand2"
         android:layout_width="263dp"
         android:layout_height="11dp"
@@ -247,7 +247,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_distal_phalanx_hand3"
         android:layout_width="232dp"
         android:layout_height="9dp"
@@ -261,7 +261,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_distal_phalanx_hand4"
         android:layout_width="205dp"
         android:layout_height="9dp"
@@ -275,7 +275,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_distal_phalanx_hand5"
         android:layout_width="187dp"
         android:layout_height="9dp"
@@ -290,7 +290,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_hamate"
         android:layout_width="208dp"
         android:layout_height="14dp"
@@ -304,7 +304,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_pisiform"
         android:layout_width="194dp"
         android:layout_height="9dp"
@@ -318,7 +318,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_capitate"
         android:layout_width="211dp"
         android:layout_height="16dp"
@@ -332,7 +332,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_trapezoid"
         android:layout_width="220dp"
         android:layout_height="13dp"
@@ -347,7 +347,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_trapezium"
         android:layout_width="230dp"
         android:layout_height="14dp"
@@ -361,7 +361,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_scaphoid"
         android:layout_width="215dp"
         android:layout_height="13dp"
@@ -375,7 +375,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_lunate"
         android:layout_width="203dp"
         android:layout_height="10dp"
@@ -390,7 +390,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_radius"
         android:layout_width="217dp"
         android:layout_height="108dp"
@@ -405,7 +405,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_ulna"
         android:layout_width="192dp"
         android:layout_height="104dp"
@@ -421,7 +421,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_humerus"
         android:layout_width="176dp"
         android:layout_height="162dp"
@@ -436,7 +436,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_rib12"
         android:layout_width="63dp"
         android:layout_height="35dp"
@@ -450,7 +450,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_rib11"
         android:layout_width="90dp"
         android:layout_height="63dp"
@@ -464,7 +464,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_rib10"
         android:layout_width="93dp"
         android:layout_height="61dp"
@@ -478,7 +478,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_rib09"
         android:layout_width="99dp"
         android:layout_height="52dp"
@@ -493,7 +493,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_rib08"
         android:layout_width="107dp"
         android:layout_height="55dp"
@@ -508,7 +508,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_rib07"
         android:layout_width="112dp"
         android:layout_height="56dp"
@@ -522,7 +522,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_rib06"
         android:layout_width="118dp"
         android:layout_height="53dp"
@@ -537,7 +537,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_rib05"
         android:layout_width="122dp"
         android:layout_height="48dp"
@@ -553,7 +553,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_rib04"
         android:layout_width="110dp"
         android:layout_height="44dp"
@@ -569,7 +569,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_rib03"
         android:layout_width="100dp"
         android:layout_height="41dp"
@@ -583,7 +583,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_rib01"
         android:layout_width="55dp"
         android:layout_height="19dp"
@@ -598,7 +598,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_rib02"
         android:layout_width="81dp"
         android:layout_height="31dp"
@@ -613,7 +613,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_cranium"
         android:layout_width="73dp"
         android:layout_height="76dp"
@@ -628,7 +628,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_mandible"
         android:layout_width="74dp"
         android:layout_height="36dp"
@@ -644,7 +644,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_p"
         android:layout_width="39dp"
         android:layout_height="229dp"
@@ -660,7 +660,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_sternum"
         android:layout_width="29dp"
         android:layout_height="70dp"
@@ -675,7 +675,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_clavicle"
         android:layout_width="121dp"
         android:layout_height="20dp"
@@ -691,7 +691,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_sacrum"
         android:layout_width="63dp"
         android:layout_height="55dp"
@@ -704,7 +704,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_tibia"
         android:layout_width="105dp"
         android:layout_height="172dp"
@@ -716,7 +716,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_patella"
         android:layout_width="79dp"
         android:layout_height="20dp"
@@ -728,7 +728,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_femur"
         android:layout_width="127dp"
         android:layout_height="169dp"
@@ -741,7 +741,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_os_coxa"
         android:layout_width="119dp"
         android:layout_height="89dp"
@@ -754,7 +754,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_coccyx"
         android:layout_width="22dp"
         android:layout_height="18dp"
@@ -767,7 +767,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_costal_cartilage1"
         android:layout_width="45dp"
         android:layout_height="11dp"
@@ -780,7 +780,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_costal_cartilage2"
         android:layout_width="55dp"
         android:layout_height="18dp"
@@ -793,7 +793,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_costal_cartilage3"
         android:layout_width="55dp"
         android:layout_height="13dp"
@@ -806,7 +806,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_costal_cartilage4"
         android:layout_width="63dp"
         android:layout_height="18dp"
@@ -819,7 +819,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_costal_cartilage5"
         android:layout_width="80dp"
         android:layout_height="28dp"
@@ -832,7 +832,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_costal_cartilage6"
         android:layout_width="105dp"
         android:layout_height="94dp"
@@ -845,7 +845,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_fibula"
         android:layout_width="100dp"
         android:layout_height="163dp"
@@ -858,7 +858,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_talus"
         android:layout_width="77dp"
         android:layout_height="15dp"
@@ -871,7 +871,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_navicular"
         android:layout_width="74dp"
         android:layout_height="11dp"
@@ -884,7 +884,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_medial_cuneiform"
         android:layout_width="69dp"
         android:layout_height="10dp"
@@ -897,7 +897,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_intermediate_cuneiform"
         android:layout_width="75dp"
         android:layout_height="6dp"
@@ -910,7 +910,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_metatarsal1"
         android:layout_width="66dp"
         android:layout_height="19dp"
@@ -923,7 +923,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_metatarsal2"
         android:layout_width="77dp"
         android:layout_height="22dp"
@@ -936,7 +936,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_metatarsal3"
         android:layout_width="89dp"
         android:layout_height="21dp"
@@ -949,7 +949,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_metatarsal4"
         android:layout_width="92dp"
         android:layout_height="18dp"
@@ -962,7 +962,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_metatarsal5"
         android:layout_width="104dp"
         android:layout_height="19dp"
@@ -975,7 +975,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_lateral_cuneiform"
         android:layout_width="83dp"
         android:layout_height="11dp"
@@ -988,7 +988,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_proximal_phalanx_foot1"
         android:layout_width="59dp"
         android:layout_height="11dp"
@@ -1001,7 +1001,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_proximal_phalanx_foot2"
         android:layout_width="77dp"
         android:layout_height="8dp"
@@ -1014,7 +1014,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_proximal_phalanx_foot3"
         android:layout_width="89dp"
         android:layout_height="6dp"
@@ -1027,7 +1027,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_proximal_phalanx_foot4"
         android:layout_width="97dp"
         android:layout_height="8dp"
@@ -1040,7 +1040,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_middle_phalanx_foot2"
         android:layout_width="80dp"
         android:layout_height="6dp"
@@ -1053,7 +1053,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_middle_phalanx_foot3"
         android:layout_width="93dp"
         android:layout_height="6dp"
@@ -1066,7 +1066,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_middle_phalanx_foot4"
         android:layout_width="100dp"
         android:layout_height="4dp"
@@ -1079,7 +1079,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_middle_phalanx_foot5"
         android:layout_width="107dp"
         android:layout_height="8dp"
@@ -1092,7 +1092,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_distal_phalanx_foot1"
         android:layout_width="58dp"
         android:layout_height="9dp"
@@ -1105,7 +1105,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_distal_phalanx_foot2"
         android:layout_width="82dp"
         android:layout_height="6dp"
@@ -1118,7 +1118,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_distal_phalanx_foot3"
         android:layout_width="95dp"
         android:layout_height="7dp"
@@ -1131,7 +1131,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_distal_phalanx_foot4"
         android:layout_width="102dp"
         android:layout_height="5dp"
@@ -1144,7 +1144,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/skeleton_distal_phalanx_foot5"
         android:layout_width="109dp"
         android:layout_height="6dp"

@@ -4,54 +4,61 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ArgbEvaluator;
 import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.ColorFilter;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.graphics.drawable.TransitionDrawable;
+import android.os.Build;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
-import android.view.SoundEffectConstants;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import ru.myitschool.anatomyatlas.R;
 
-public class StrangeView extends ImageView {
+public class BodyPartView extends androidx.appcompat.widget.AppCompatImageView {
     private Bitmap bitmap;
     private Sprite sprite;
     private OnClickListener clickListener;
     private String name;
     private String infoText;
-    private ObjectAnimator animator;
+    private ValueAnimator animator;
     private boolean animated = false;
+    private boolean useAnimation = false;
 
-    public StrangeView(Context context) {
+    public BodyPartView(Context context) {
         super(context);
     }
 
-    public StrangeView(Context context, @Nullable AttributeSet attrs) {
+    public BodyPartView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         init(context, attrs);
     }
 
-    public StrangeView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public BodyPartView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context, attrs);
     }
 
-    public StrangeView(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
-        init(context, attrs);
-    }
 
     private void init(Context context, AttributeSet attrs) {
+        if (!Build.MANUFACTURER.contains("HUAWEI")){
+            useAnimation = true;
+        }
         TypedArray a = context.getTheme().obtainStyledAttributes(attrs, R.styleable.StrangeView, 0, 0);
         name = a.getString(R.styleable.StrangeView_android_text);
         infoText = a.getString(R.styleable.StrangeView_android_tooltipText);
@@ -109,14 +116,25 @@ public class StrangeView extends ImageView {
     }
 
     public void startAnimation() {
-        animator.start();
+        if (useAnimation) {
+            animator.start(); // lagging
+        }
+        else {
+            setColorFilter(Color.parseColor("#7AFF0F63"));
+        }
         animated = true;
     }
 
     public void stopAnimation() {
+        if (animated) {
+            if (useAnimation) {
+                animator.end(); // lagging
+                animator = animator.clone(); // lagging
+            } else {
+                clearColorFilter();
+            }
+        }
         animated = false;
-        animator.cancel();
-        configureAnimator();
     }
     public boolean isAnimated(){
         return animated;
@@ -129,14 +147,13 @@ public class StrangeView extends ImageView {
         return infoText;
     }
     private void configureAnimator(){
-        animator = ObjectAnimator.ofInt(this,
-                "colorFilter",
-                Color.parseColor("#7D000000"),
-                Color.parseColor("#7DFFFFFF"),
-                Color.parseColor("#7D000000"));
+        animator = ValueAnimator.ofArgb(Color.parseColor("#7D000000"),Color.parseColor("#7DFFFFFF"), Color.parseColor("#7D000000"));
         animator.setDuration(1000);
         animator.setEvaluator(new ArgbEvaluator());
         animator.setRepeatCount(Animation.INFINITE);
+        animator.addUpdateListener(animation -> {
+            setColorFilter((Integer) animation.getAnimatedValue());
+        });
         animator.addListener(new AnimatorListenerAdapter() {
             @Override
             public void onAnimationEnd(Animator animation) {

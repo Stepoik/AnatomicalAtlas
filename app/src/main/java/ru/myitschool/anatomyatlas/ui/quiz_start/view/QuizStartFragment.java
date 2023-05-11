@@ -2,40 +2,27 @@ package ru.myitschool.anatomyatlas.ui.quiz_start.view;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.navigation.NavController;
-import androidx.navigation.fragment.NavHostFragment;
 
-import android.animation.Animator;
-import android.animation.AnimatorInflater;
-import android.animation.ArgbEvaluator;
-import android.animation.ObjectAnimator;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
 import android.widget.Toast;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Timer;
-import java.util.TimerTask;
-import java.util.stream.Collectors;
 
 import ru.myitschool.anatomyatlas.R;
 import ru.myitschool.anatomyatlas.data.models.BodyPart;
-import ru.myitschool.anatomyatlas.data.models.Money;
 import ru.myitschool.anatomyatlas.databinding.FragmentQuizStartBinding;
 import ru.myitschool.anatomyatlas.ui.NavigateFromChild;
 import ru.myitschool.anatomyatlas.ui.UseSkeleton;
-import ru.myitschool.anatomyatlas.ui.custom_views.StrangeView;
+import ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView;
 import ru.myitschool.anatomyatlas.ui.quiz_start.viewModel.QuizStartViewModel;
 import ru.myitschool.anatomyatlas.ui.quiz_start.viewModel.QuizStartViewModelFactory;
 
@@ -43,8 +30,8 @@ import ru.myitschool.anatomyatlas.ui.quiz_start.viewModel.QuizStartViewModelFact
 public class QuizStartFragment extends Fragment implements UseSkeleton {
     private FragmentQuizStartBinding binding;
     private QuizStartViewModel viewModel;
-    private Map<String, StrangeView> views = new HashMap<>();
-    private StrangeView selectedView;
+    private Map<String, BodyPartView> views = new HashMap<>();
+    private BodyPartView selectedView;
     private final int GREEN = Color.parseColor("#8209FF00");
     private Toast noMoneyToast;
     private int bodyCount = 0;
@@ -76,7 +63,7 @@ public class QuizStartFragment extends Fragment implements UseSkeleton {
             clearFilters();
             bodyCount = bodyParts.size();
             for (BodyPart bodyPart: bodyParts){
-                StrangeView v = views.get(bodyPart.getName());
+                BodyPartView v = views.get(bodyPart.getName());
                 if (v != null) {
                     v.setColorFilter(GREEN);
                 }
@@ -114,7 +101,7 @@ public class QuizStartFragment extends Fragment implements UseSkeleton {
     void fillViewList(List<ViewGroup> listViews){
         for (ViewGroup viewGroup: listViews){
             for (int i = 0; i < viewGroup.getChildCount(); i++){
-                StrangeView currentView = (StrangeView)viewGroup.getChildAt(i);
+                BodyPartView currentView = (BodyPartView)viewGroup.getChildAt(i);
                 views.put(currentView.getName(), currentView);
                 currentView.setOnClickListener(v -> {
                     if (currentView != selectedView){
@@ -153,7 +140,7 @@ public class QuizStartFragment extends Fragment implements UseSkeleton {
             return;
         }
         if (selectedView.getParent() != null &&
-                ((View)selectedView.getParent()).getAlpha() < 0.7){
+                ((View)selectedView.getParent()).getAlpha() < 0){
             selectedView.stopAnimation();
             return;
         }

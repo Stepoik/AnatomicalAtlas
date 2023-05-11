@@ -85,7 +85,7 @@ public class QuizViewModel extends ViewModel {
             timer.schedule(new TimerTask() {
                 @Override
                 public void run() {
-                    if (progress.getValue() == 0) {
+                    if (progress.getValue() <= 0) {
                         handler.post(() -> select(null));
                     }
                     if (!pause) {

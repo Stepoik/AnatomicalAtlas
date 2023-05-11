@@ -1,33 +1,25 @@
 package ru.myitschool.anatomyatlas.ui.quiz.view;
 
-import android.app.AlertDialog;
-import android.app.Dialog;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.activity.OnBackPressedCallback;
 import androidx.activity.OnBackPressedDispatcher;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 
 import java.util.List;
-import java.util.Timer;
-import java.util.TimerTask;
 
 import ru.myitschool.anatomyatlas.R;
 import ru.myitschool.anatomyatlas.databinding.FragmentQuizBinding;
 import ru.myitschool.anatomyatlas.ui.UseSkeleton;
-import ru.myitschool.anatomyatlas.ui.custom_views.StrangeView;
+import ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView;
 import ru.myitschool.anatomyatlas.ui.dialogs.BackDialog;
 import ru.myitschool.anatomyatlas.ui.quiz.viewModel.QuizViewModel;
 import ru.myitschool.anatomyatlas.ui.quiz.viewModel.QuizViewModelFactory;
@@ -35,7 +27,7 @@ import ru.myitschool.anatomyatlas.ui.quiz.viewModel.QuizViewModelFactory;
 public class QuizFragment extends Fragment implements UseSkeleton {
     private FragmentQuizBinding binding;
     private QuizViewModel viewModel;
-    private StrangeView selectedView;
+    private BodyPartView selectedView;
     private NavController controller;
 
     @Nullable
@@ -120,9 +112,9 @@ public class QuizFragment extends Fragment implements UseSkeleton {
     private void makeViewsClickable(List<ViewGroup> views){
         for (ViewGroup viewGroup: views){
             for (int i = 0; i < viewGroup.getChildCount(); i++){
-                StrangeView v = (StrangeView) viewGroup.getChildAt(i);
+                BodyPartView v = (BodyPartView) viewGroup.getChildAt(i);
                 v.setOnClickListener(v1 -> {
-                    StrangeView currentView = (StrangeView) v1;
+                    BodyPartView currentView = (BodyPartView) v1;
                     if (selectedView != null){
                         selectedView.stopAnimation();
                     }
@@ -158,7 +150,7 @@ public class QuizFragment extends Fragment implements UseSkeleton {
             return;
         }
         if (selectedView.getParent() != null &&
-                ((View)selectedView.getParent()).getAlpha() < 0.7){
+                ((View)selectedView.getParent()).getAlpha() < 0){
             selectedView.stopAnimation();
             return;
         }

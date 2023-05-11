@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/organs_frontal_sinus"
         android:layout_width="36dp"
         android:layout_height="17dp"
@@ -20,7 +20,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/organs_nasopharynx"
         android:layout_width="19dp"
         android:layout_height="29dp"
@@ -35,7 +35,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/organs_ethmoid_aircells"
         android:layout_width="28dp"
         android:layout_height="12dp"
@@ -50,7 +50,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/organs_maxillary_sinus"
         android:layout_width="40dp"
         android:layout_height="17dp"
@@ -65,7 +65,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/organs_parotid_salivary_gland"
         android:layout_width="59dp"
         android:layout_height="29dp"
@@ -80,7 +80,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/organs_mouth"
         android:layout_width="47dp"
         android:layout_height="25dp"
@@ -95,7 +95,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/organs_tongue"
         android:layout_width="25dp"
         android:layout_height="8dp"
@@ -110,7 +110,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/organs_submandibular_salivary_gland"
         android:layout_width="44dp"
         android:layout_height="11dp"
@@ -125,7 +125,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/organs_epiglottis"
         android:layout_width="10dp"
         android:layout_height="8dp"
@@ -140,7 +140,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/organs_larynx"
         android:layout_width="10dp"
         android:layout_height="8dp"
@@ -155,7 +155,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/organs_hyoepiglottic_ligament"
         android:layout_width="4dp"
         android:layout_height="4dp"
@@ -170,7 +170,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/organs_thyrohyoid_membrane"
         android:layout_width="23dp"
         android:layout_height="15dp"
@@ -185,7 +185,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/organs_thyroid_cartilage"
         android:layout_width="23dp"
         android:layout_height="27dp"
@@ -200,7 +200,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/organs_cricothyroid_ligament"
         android:layout_width="18dp"
         android:layout_height="10dp"
@@ -214,7 +214,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/organs_cricoid_cartilage"
         android:layout_width="18dp"
         android:layout_height="10dp"
@@ -229,7 +229,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/organs_thyroid_gland"
         android:layout_width="20dp"
         android:layout_height="26dp"
@@ -244,7 +244,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/organs_trachea"
         android:layout_width="9dp"
         android:layout_height="30dp"
@@ -259,7 +259,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/organs_pleura"
         android:layout_width="102dp"
         android:layout_height="132dp"
@@ -274,7 +274,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/organs_thymus"
         android:layout_width="12dp"
         android:layout_height="28dp"
@@ -289,7 +289,7 @@
         app:layout_constraintStart_toStartOf="@+id/organs_pleura"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/organs_bronchus"
         android:layout_width="10dp"
         android:layout_height="9dp"
@@ -305,7 +305,7 @@
         app:layout_constraintStart_toStartOf="@+id/organs_pleura"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/organs_esophagus"
         android:layout_width="8dp"
         android:layout_height="39dp"
@@ -320,7 +320,7 @@
         app:layout_constraintStart_toStartOf="@+id/organs_pleura"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/organs_liver"
         android:layout_width="70dp"
         android:layout_height="54dp"
@@ -335,7 +335,7 @@
         app:layout_constraintStart_toStartOf="@+id/organs_pleura"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/organs_stomach"
         android:layout_width="55dp"
         android:layout_height="41dp"
@@ -350,7 +350,7 @@
         app:layout_constraintStart_toStartOf="@+id/organs_pleura"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/organs_spleen"
         android:layout_width="9dp"
         android:layout_height="17dp"
@@ -364,7 +364,7 @@
         android:text="Spleen"
         app:layout_constraintStart_toStartOf="@+id/organs_pleura"
         app:layout_constraintTop_toTopOf="parent" />
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/organs_pancreas"
         android:layout_width="23dp"
         android:layout_height="17dp"
@@ -378,7 +378,7 @@
         android:text="Pancreas"
         app:layout_constraintStart_toStartOf="@+id/organs_pleura"
         app:layout_constraintTop_toTopOf="parent" />
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/organs_gallbladder"
         android:layout_width="13dp"
         android:layout_height="10dp"
@@ -393,7 +393,7 @@
         app:layout_constraintStart_toStartOf="@+id/organs_pleura"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/organs_intestine_duodenum"
         android:layout_width="36dp"
         android:layout_height="17dp"
@@ -408,7 +408,7 @@
         app:layout_constraintStart_toStartOf="@+id/organs_pleura"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/organs_transverse_colon"
         android:layout_width="88dp"
         android:layout_height="39dp"
@@ -423,7 +423,7 @@
         app:layout_constraintStart_toStartOf="@+id/organs_pleura"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/organs_small_intestine_jejunum"
         android:layout_width="40dp"
         android:layout_height="79dp"
@@ -438,7 +438,7 @@
         app:layout_constraintStart_toStartOf="@+id/organs_pleura"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/organs_large_intestine_descending_colon"
         android:layout_width="22dp"
         android:layout_height="63dp"
@@ -453,7 +453,7 @@
         app:layout_constraintStart_toStartOf="@+id/organs_pleura"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/organs_sigmoid_colon"
         android:layout_width="40dp"
         android:layout_height="23dp"
@@ -468,7 +468,7 @@
         app:layout_constraintStart_toStartOf="@+id/organs_pleura"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/organs_small_intestine_ileum"
         android:layout_width="64dp"
         android:layout_height="59dp"
@@ -483,7 +483,7 @@
         app:layout_constraintStart_toStartOf="@+id/organs_pleura"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/organs_ascending_colon"
         android:layout_width="17dp"
         android:layout_height="51dp"
@@ -498,7 +498,7 @@
         app:layout_constraintStart_toStartOf="@+id/organs_pleura"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/organs_large_intestine_cecum"
         android:layout_width="19dp"
         android:layout_height="18dp"
@@ -512,7 +512,7 @@
         app:layout_constraintStart_toStartOf="@+id/organs_pleura"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.myitschool.anatomyatlas.ui.custom_views.StrangeView
+    <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
         android:id="@+id/organs_appendix"
         android:layout_width="12dp"
         android:layout_height="13dp"

@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface UseSkeleton {
     void onLoadChildFragment(List<ViewGroup> views);
+    void onChangeSeekBar(int progress);
 }

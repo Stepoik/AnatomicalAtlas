@@ -27,7 +27,7 @@ public class SkeletonFragment extends Fragment {
     private SkeletonViewModel viewModel;
     private final int SKELETON_PROGRESS = 100;
     private final int ORGANS_PROGRESS = 0;
-    private final int PROGRESS_VISIBLE = 50;
+    private final int PROGRESS_VISIBLE = 70;
 
     @Nullable
     @Override
@@ -36,7 +36,6 @@ public class SkeletonFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         binding = FragmentSkeletonBinding.inflate(inflater, container, false);
         return binding.getRoot();
-
     }
 
     @Override
@@ -66,13 +65,13 @@ public class SkeletonFragment extends Fragment {
 
             }
         });
-        viewModel.getProgressContainer().observe(getViewLifecycleOwner(), new Observer<Integer>() {
-            @Override
-            public void onChanged(Integer integer) {
-                binding.seekBar.setProgress(integer);
-                binding.skeleton.getRoot().setAlpha((float)((PROGRESS_VISIBLE-Math.abs(SKELETON_PROGRESS-integer)))/PROGRESS_VISIBLE);
-                binding.organs.getRoot().setAlpha((float)((PROGRESS_VISIBLE-Math.abs(ORGANS_PROGRESS-integer)))/PROGRESS_VISIBLE);
+        viewModel.getProgressContainer().observe(getViewLifecycleOwner(), integer -> {
+            if (getParentFragment() instanceof UseSkeleton){
+                ((UseSkeleton) getParentFragment()).onChangeSeekBar(integer);
             }
+            binding.seekBar.setProgress(integer);
+            binding.skeleton.getRoot().setAlpha((float)((PROGRESS_VISIBLE-Math.abs(SKELETON_PROGRESS-integer)))/PROGRESS_VISIBLE);
+            binding.organs.getRoot().setAlpha((float)((PROGRESS_VISIBLE-Math.abs(ORGANS_PROGRESS-integer)))/PROGRESS_VISIBLE);
         });
         viewModel.setProgress(100);
     }

@@ -32,6 +32,7 @@ public class StudyFragment extends Fragment implements UseSkeleton {
     private FragmentStudyBinding binding;
     private BottomSheetBehavior bottomSheetBehavior;
     private StudyViewModel viewModel;
+    private StrangeView selectedView;
 
     @Nullable
     @Override
@@ -43,26 +44,31 @@ public class StudyFragment extends Fragment implements UseSkeleton {
         return binding.getRoot();
     }
     private void subscribe(List<ViewGroup> layouts){
-        binding.bottomInfo.contentScrollView.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                binding.bottomInfo.contentScrollView.onTouchEvent(event);
-                binding.bottomInfo.contentScrollView.requestDisallowInterceptTouchEvent(true);
-                return true;
-            }
+        binding.bottomInfo.contentScrollView.setOnTouchListener((v, event) -> {
+            binding.bottomInfo.contentScrollView.onTouchEvent(event);
+            binding.bottomInfo.contentScrollView.requestDisallowInterceptTouchEvent(true);
+            return true;
         });
         viewModel.getSelectedIdContainer().observe(getViewLifecycleOwner(), id -> {
+            if (id == 0){
+                if (selectedView == null){
+                    return;
+                }
+                selectedView.stopAnimation();
+                binding.bottomInfo.name.setText("");
+                binding.bottomInfo.content.setText("");
+                bottomSheetBehavior.setState(BottomSheetBehavior.STATE_HIDDEN);
+                selectedView = null;
+                return;
+            }
             View v = binding.getRoot().findViewById(id);
             binding.bottomInfo.name.setText(((StrangeView)v).getName());
             binding.bottomInfo.content.setText(((StrangeView)v).getInfo());
-            for (ViewGroup layout: layouts) {
-                for (int i = 0; i < layout.getChildCount(); i++) {
-                    StrangeView imageView = (StrangeView) layout.getChildAt(i);
-                    imageView.stopAnimation();
-                }
+            if (selectedView != null){
+                selectedView.stopAnimation();
             }
-            ((StrangeView)v).startAnimation();
-            System.out.println(bottomSheetBehavior.getState());
+            selectedView = (StrangeView)v;
+            selectedView.startAnimation();
             if (bottomSheetBehavior.getState() == BottomSheetBehavior.STATE_COLLAPSED ||
                     bottomSheetBehavior.getState() == BottomSheetBehavior.STATE_HIDDEN){
                 bottomSheetBehavior.setState(BottomSheetBehavior.STATE_HALF_EXPANDED);
@@ -74,7 +80,7 @@ public class StudyFragment extends Fragment implements UseSkeleton {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         bottomSheetBehavior = BottomSheetBehavior.from(binding.bottomInfo.getRoot());
-        bottomSheetBehavior.setHalfExpandedRatio(250f/getResources().getDisplayMetrics().heightPixels);
+        bottomSheetBehavior.setHalfExpandedRatio(400f/getResources().getDisplayMetrics().heightPixels);
         bottomSheetBehavior.setMaxHeight((int)(getResources().getDisplayMetrics().heightPixels*0.6));
         bottomSheetBehavior.addBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
             @Override
@@ -97,6 +103,21 @@ public class StudyFragment extends Fragment implements UseSkeleton {
                 ImageView imageView = (ImageView) views.getChildAt(i);
                 imageView.setOnClickListener(v -> viewModel.setSelected(v.getId()));
             }
+        }
+    }
+
+    @Override
+    public void onChangeSeekBar(int progress) {
+        if (selectedView == null){
+            return;
+        }
+        if (selectedView.getParent() != null &&
+                ((View)selectedView.getParent()).getAlpha() < 0.7){
+            selectedView.stopAnimation();
+            return;
+        }
+        if (!selectedView.isAnimated()){
+            selectedView.startAnimation();
         }
     }
 }

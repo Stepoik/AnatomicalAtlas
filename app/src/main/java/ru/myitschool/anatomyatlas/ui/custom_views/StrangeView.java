@@ -30,6 +30,7 @@ public class StrangeView extends ImageView {
     private String name;
     private String infoText;
     private ObjectAnimator animator;
+    private boolean animated = false;
 
     public StrangeView(Context context) {
         super(context);
@@ -69,28 +70,13 @@ public class StrangeView extends ImageView {
             }
             sprite = new Sprite(bitmap);
         }
-        animator = ObjectAnimator.ofInt(this,
-                "colorFilter",
-                Color.parseColor("#7D000000"),
-                Color.parseColor("#7DFFFFFF"),
-                Color.parseColor("#7D000000"));
-        animator.setDuration(1000);
-        animator.setEvaluator(new ArgbEvaluator());
-        animator.setRepeatCount(Animation.INFINITE);
-        animator.addListener(new AnimatorListenerAdapter() {
-            @Override
-            public void onAnimationEnd(Animator animation) {
-                clearColorFilter();
-            }
-
-        });
+        configureAnimator();
     }
 
     public void onClick(MotionEvent event) {
         if (startPress(event)) {
             if (clickListener != null) {
                 if (getAlpha() > 0.5 && ((View)getParent()).getAlpha() > 0.5) {
-                    playSoundEffect(SoundEffectConstants.CLICK);
                     clickListener.onClick(this);
                 }
             }
@@ -124,12 +110,17 @@ public class StrangeView extends ImageView {
 
     public void startAnimation() {
         animator.start();
+        animated = true;
     }
 
     public void stopAnimation() {
+        animated = false;
         animator.cancel();
+        configureAnimator();
     }
-
+    public boolean isAnimated(){
+        return animated;
+    }
     public String getName() {
         return name;
     }
@@ -137,5 +128,20 @@ public class StrangeView extends ImageView {
     public String getInfo() {
         return infoText;
     }
-
+    private void configureAnimator(){
+        animator = ObjectAnimator.ofInt(this,
+                "colorFilter",
+                Color.parseColor("#7D000000"),
+                Color.parseColor("#7DFFFFFF"),
+                Color.parseColor("#7D000000"));
+        animator.setDuration(1000);
+        animator.setEvaluator(new ArgbEvaluator());
+        animator.setRepeatCount(Animation.INFINITE);
+        animator.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                clearColorFilter();
+            }
+        });
+    }
 }

@@ -142,7 +142,6 @@ public class ZoomLayout extends ConstraintLayout {
 
         @Override
         public boolean onTouch(View v, MotionEvent event) {
-            System.out.println(event);
             if (event.getAction() == MotionEvent.ACTION_DOWN || event.getPointerCount() > pointerCount){
                 pointerCount = event.getPointerCount();
             }

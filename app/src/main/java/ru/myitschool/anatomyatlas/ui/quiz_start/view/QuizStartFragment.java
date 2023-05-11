@@ -146,4 +146,19 @@ public class QuizStartFragment extends Fragment implements UseSkeleton {
     public void onLoadChildFragment(List<ViewGroup> views) {
         fillViewList(views);
     }
+
+    @Override
+    public void onChangeSeekBar(int progress) {
+        if (selectedView == null){
+            return;
+        }
+        if (selectedView.getParent() != null &&
+                ((View)selectedView.getParent()).getAlpha() < 0.7){
+            selectedView.stopAnimation();
+            return;
+        }
+        if (!selectedView.isAnimated()){
+            selectedView.startAnimation();
+        }
+    }
 }

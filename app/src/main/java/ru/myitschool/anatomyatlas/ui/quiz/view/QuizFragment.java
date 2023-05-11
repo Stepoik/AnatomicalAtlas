@@ -152,4 +152,19 @@ public class QuizFragment extends Fragment implements UseSkeleton {
         makeViewsClickable(views);
     }
 
+    @Override
+    public void onChangeSeekBar(int progress) {
+        if (selectedView == null){
+            return;
+        }
+        if (selectedView.getParent() != null &&
+                ((View)selectedView.getParent()).getAlpha() < 0.7){
+            selectedView.stopAnimation();
+            return;
+        }
+        if (!selectedView.isAnimated()){
+            selectedView.startAnimation();
+        }
+    }
+
 }

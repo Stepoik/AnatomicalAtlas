@@ -72,6 +72,7 @@ public class StudyFragment extends Fragment implements UseSkeleton {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        System.out.println("here");
         bottomSheetBehavior = BottomSheetBehavior.from(binding.bottomInfo.getRoot());
         bottomSheetBehavior.setHalfExpandedRatio(400f/getResources().getDisplayMetrics().heightPixels);
         bottomSheetBehavior.setMaxHeight((int)(getResources().getDisplayMetrics().heightPixels*0.6));

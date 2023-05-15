@@ -9,5 +9,7 @@
     <item android:id="@+id/listFragment"
         android:title="@string/list"
         android:icon="@drawable/ic_baseline_list_24"/>
-
+    <item android:id="@+id/skeleton3DFragment"
+        android:title="3D"
+        android:icon="@drawable/skeleton_icon"/>
 </menu>

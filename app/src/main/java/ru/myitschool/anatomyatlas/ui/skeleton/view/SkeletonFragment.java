@@ -47,8 +47,8 @@ public class SkeletonFragment extends Fragment {
         binding.getRoot().setZoomLayout(binding.content);
         if (getParentFragment() instanceof UseSkeleton){
             ((UseSkeleton) getParentFragment()).onLoadChildFragment(
-                    new ArrayList<>(Arrays.asList(binding.skeleton.getRoot(),
-                            binding.organs.getRoot())));
+                    Arrays.asList(binding.skeleton.getRoot(),
+                            binding.organs.getRoot()));
         }
         binding.seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override

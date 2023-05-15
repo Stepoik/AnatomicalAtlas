@@ -31,14 +31,11 @@ import androidx.annotation.Nullable;
 import ru.myitschool.anatomyatlas.R;
 
 public class BodyPartView extends androidx.appcompat.widget.AppCompatImageView {
-    private Bitmap bitmap;
     private Sprite sprite;
     private OnClickListener clickListener;
     private String name;
     private String infoText;
     private ValueAnimator animator;
-    private boolean animated = false;
-    private boolean useAnimation = false;
 
     public BodyPartView(Context context) {
         super(context);
@@ -56,14 +53,12 @@ public class BodyPartView extends androidx.appcompat.widget.AppCompatImageView {
 
 
     private void init(Context context, AttributeSet attrs) {
-        if (!Build.MANUFACTURER.contains("HUAWEI")){
-            useAnimation = true;
-        }
         TypedArray a = context.getTheme().obtainStyledAttributes(attrs, R.styleable.StrangeView, 0, 0);
         name = a.getString(R.styleable.StrangeView_android_text);
         infoText = a.getString(R.styleable.StrangeView_android_tooltipText);
         Drawable drawable = getDrawable();
         if (drawable != null) {
+            Bitmap bitmap;
             if (drawable instanceof BitmapDrawable) {
                 bitmap = ((BitmapDrawable) drawable).getBitmap();
             } else {
@@ -93,7 +88,7 @@ public class BodyPartView extends androidx.appcompat.widget.AppCompatImageView {
     public boolean startPress(MotionEvent event) {
         float x = event.getX();
         float y = event.getY();
-        return sprite.isPressed((int) (x * (float) bitmap.getWidth() / getWidth()), (int) (y * (float) bitmap.getHeight() / getHeight()))
+        return sprite.isPressed((int)x,(int)y, getWidth(), getHeight())
                 && getAlpha() > 0.5
                 && ((View)getParent()).getAlpha() > 0.5;
     }
@@ -116,28 +111,21 @@ public class BodyPartView extends androidx.appcompat.widget.AppCompatImageView {
     }
 
     public void startAnimation() {
-        if (useAnimation) {
-            animator.start(); // lagging
+        if (animator.isPaused()){
+            animator.resume();
         }
         else {
-            setColorFilter(Color.parseColor("#7AFF0F63"));
+            animator.start();
         }
-        animated = true;
     }
 
     public void stopAnimation() {
-        if (animated) {
-            if (useAnimation) {
-                animator.end(); // lagging
-                animator = animator.clone(); // lagging
-            } else {
-                clearColorFilter();
-            }
+        if (!animator.isPaused()) {
+            animator.pause();
         }
-        animated = false;
     }
     public boolean isAnimated(){
-        return animated;
+        return !animator.isPaused();
     }
     public String getName() {
         return name;
@@ -152,13 +140,28 @@ public class BodyPartView extends androidx.appcompat.widget.AppCompatImageView {
         animator.setEvaluator(new ArgbEvaluator());
         animator.setRepeatCount(Animation.INFINITE);
         animator.addUpdateListener(animation -> {
-            setColorFilter((Integer) animation.getAnimatedValue());
+            setColorFilter(new PorterDuffColorFilter((int)animation.getAnimatedValue(), PorterDuff.Mode.SRC_ATOP));
         });
-        animator.addListener(new AnimatorListenerAdapter() {
+        animator.addPauseListener(new AnimatorListenerAdapter() {
             @Override
-            public void onAnimationEnd(Animator animation) {
+            public void onAnimationPause(Animator animation) {
                 clearColorFilter();
             }
         });
     }
+    public class Sprite {
+        private Bitmap bitmap;
+        public Sprite(Bitmap bitmap){
+            this.bitmap = bitmap;
+        }
+        public boolean isPressed(int x, int y, int width, int height){
+            x = (int) (x * (float) bitmap.getWidth() / width);
+            y = (int) (y * (float) bitmap.getHeight() / height);
+            if (x < bitmap.getWidth() && y < bitmap.getHeight() && x > 0 && y > 0) {
+                return !(bitmap.getColor(x, y).alpha() < 0.5);
+            }
+            return false;
+        }
+    }
+
 }

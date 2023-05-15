@@ -28,4 +28,9 @@
         android:name="ru.myitschool.anatomyatlas.ui.list.view.SearchFragment"
         android:label="fragment_search"
         tools:layout="@layout/fragment_search" />
+    <fragment
+        android:id="@+id/skeleton3DFragment"
+        android:name="ru.myitschool.anatomyatlas.ui.skeleton_3d.view.Skeleton3DFragment"
+        android:label="fragment_skeleton3_d"
+        tools:layout="@layout/fragment_skeleton3_d" />
 </navigation>

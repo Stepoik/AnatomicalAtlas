@@ -9,7 +9,8 @@
     tools:context=".ui.skeleton.view.SkeletonFragment">
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:scrollbars="none">
         <ru.myitschool.anatomyatlas.ui.custom_views.ZoomLayout
             android:id="@+id/content"
             android:layout_width="match_parent"
@@ -40,7 +41,7 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:progress="100"
-        android:progressDrawable="@drawable/progressbar"
+        android:progressDrawable="@drawable/layer_seekbar_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.06"

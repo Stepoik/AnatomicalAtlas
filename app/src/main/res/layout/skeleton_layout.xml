@@ -675,7 +675,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
-        android:id="@+id/skeleton_clavicle"
+        android:id="@+id/skeleton_clavicula"
         android:layout_width="121dp"
         android:layout_height="20dp"
 
@@ -684,7 +684,7 @@
 
         android:scaleType="fitCenter"
         android:src="@drawable/skeleton_clavicle"
-        android:text="Clavicle"
+        android:text="Clavicula"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -871,14 +871,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
-        android:id="@+id/skeleton_navicular"
+        android:id="@+id/skeleton_naviculare"
         android:layout_width="74dp"
         android:layout_height="11dp"
         android:layout_marginTop="682dp"
         android:adjustViewBounds="true"
         android:scaleType="fitCenter"
         android:src="@drawable/skeleton_navicular"
-        android:text="Navicular"
+        android:text="Navicularу"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

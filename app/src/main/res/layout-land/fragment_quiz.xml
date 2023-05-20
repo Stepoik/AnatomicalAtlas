@@ -55,7 +55,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/button_back"
-        android:text="Ответить"
+        android:text="@string/answer"
         android:visibility="gone"
         android:textSize="20sp"
         android:fontFamily="@font/ubuntu_medium"
@@ -64,7 +64,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
+    <ImageView
+        android:id="@+id/is_answer_correct"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
     <ImageView
         android:id="@+id/pause"
         android:layout_width="wrap_content"

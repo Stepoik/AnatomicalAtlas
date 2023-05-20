@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@android:id/background">
+        <layer-list>
+            <item>
+                <shape>
+                    <solid android:color="@color/green_gray"/>
+                    <corners android:radius="10dp"/>
+                </shape>
+            </item>
+            <item android:width="30dp" android:height="30dp" android:gravity="end"
+                android:end="7dp">
+                <rotate  android:fromDegrees="90"
+                    android:toDegrees="90"
+                    android:pivotX="50%"
+                    android:pivotY="50%"
+                    android:drawable="@drawable/ic_skeleton_layer"/>
+            </item>
+            <item android:width="30dp" android:height="30dp" android:gravity="start">
+                <rotate  android:fromDegrees="90"
+                    android:toDegrees="90"
+                    android:pivotX="50%"
+                    android:pivotY="50%"
+                    android:drawable="@drawable/ic_organs_layer"/>
+            </item>
+        </layer-list>
+    </item>
+    <item android:id="@android:id/progress">
+        <clip android:gravity="start" android:clipOrientation="horizontal">
+            <layer-list>
+                <item>
+                    <shape>
+                        <solid android:color="@color/pink"/>
+                        <corners android:radius="10dp"/>
+                    </shape>
+                </item>
+                <item android:width="30dp"
+                    android:height="30dp"
+                    android:gravity="end"
+                    android:end="7dp">
+                    <rotate  android:fromDegrees="90"
+                        android:toDegrees="90"
+                        android:pivotX="50%"
+                        android:pivotY="50%"
+                        android:drawable="@drawable/ic_skeleton_layer"/>
+                </item>
+                <item android:width="30dp"
+                    android:height="30dp"
+                    android:gravity="start">
+                    <rotate  android:fromDegrees="90"
+                        android:toDegrees="90"
+                        android:pivotX="50%"
+                        android:pivotY="50%"
+                        android:drawable="@drawable/ic_organs_layer"/>
+                </item>
+            </layer-list>
+        </clip>
+    </item>
+</layer-list>

@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
-        android:id="@+id/organs_frontal_sinus"
+        android:id="@+id/organs_sinus_frontales"
         android:layout_width="36dp"
         android:layout_height="17dp"
         android:layout_marginTop="24dp"
@@ -15,7 +15,7 @@
         android:maxHeight="150dp"
         android:scaleType="fitXY"
         android:src="@drawable/organs_frontal_sinus"
-        android:text="Frontal sinus"
+        android:text="Sinus frontales"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -81,7 +81,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
-        android:id="@+id/organs_mouth"
+        android:id="@+id/organs_cavum_oris"
         android:layout_width="47dp"
         android:layout_height="25dp"
         android:layout_marginTop="68dp"
@@ -90,13 +90,13 @@
         android:maxHeight="150dp"
         android:scaleType="fitXY"
         android:src="@drawable/organs_mouth"
-        android:text="Mouth"
+        android:text="Cavum oris"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
-        android:id="@+id/organs_tongue"
+        android:id="@+id/organs_lingua"
         android:layout_width="25dp"
         android:layout_height="8dp"
         android:layout_marginTop="77dp"
@@ -105,7 +105,7 @@
         android:maxHeight="150dp"
         android:scaleType="fitXY"
         android:src="@drawable/organs_tongue"
-        android:text="Tongue"
+        android:text="Lingua"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -321,7 +321,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
-        android:id="@+id/organs_liver"
+        android:id="@+id/organs_hepar"
         android:layout_width="70dp"
         android:layout_height="54dp"
         android:layout_marginStart="3dp"
@@ -331,12 +331,12 @@
         android:maxHeight="150dp"
         android:scaleType="fitXY"
         android:src="@drawable/organs_liver"
-        android:text="Liver"
+        android:text="Hepar"
         app:layout_constraintStart_toStartOf="@+id/organs_pleura"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
-        android:id="@+id/organs_stomach"
+        android:id="@+id/organs_ventriculum"
         android:layout_width="55dp"
         android:layout_height="41dp"
         android:layout_marginStart="29dp"
@@ -346,12 +346,12 @@
         android:maxHeight="150dp"
         android:scaleType="fitXY"
         android:src="@drawable/organs_stomach"
-        android:text="Stomach"
+        android:text="Ventriculum"
         app:layout_constraintStart_toStartOf="@+id/organs_pleura"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
-        android:id="@+id/organs_spleen"
+        android:id="@+id/organs_splen"
         android:layout_width="9dp"
         android:layout_height="17dp"
         android:layout_marginStart="81dp"
@@ -361,7 +361,7 @@
         android:maxHeight="150dp"
         android:scaleType="fitXY"
         android:src="@drawable/organs_spleen"
-        android:text="Spleen"
+        android:text="Splen"
         app:layout_constraintStart_toStartOf="@+id/organs_pleura"
         app:layout_constraintTop_toTopOf="parent" />
     <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
@@ -379,7 +379,7 @@
         app:layout_constraintStart_toStartOf="@+id/organs_pleura"
         app:layout_constraintTop_toTopOf="parent" />
     <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
-        android:id="@+id/organs_gallbladder"
+        android:id="@+id/organs_vesica_fellea"
         android:layout_width="13dp"
         android:layout_height="10dp"
         android:layout_marginStart="20dp"
@@ -389,7 +389,7 @@
         android:maxHeight="150dp"
         android:scaleType="fitXY"
         android:src="@drawable/organs_gallbladder"
-        android:text="Gallbladder"
+        android:text="Vesica fellea"
         app:layout_constraintStart_toStartOf="@+id/organs_pleura"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -424,7 +424,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView
-        android:id="@+id/organs_small_intestine_jejunum"
+        android:id="@+id/organs_intestinum_tenue"
         android:layout_width="40dp"
         android:layout_height="79dp"
         android:layout_marginStart="55dp"
@@ -434,7 +434,7 @@
         android:maxHeight="150dp"
         android:scaleType="fitXY"
         android:src="@drawable/organs_small_intestine_jejunum"
-        android:text="Small intestine jejunum"
+        android:text="Intestinum tenue"
         app:layout_constraintStart_toStartOf="@+id/organs_pleura"
         app:layout_constraintTop_toTopOf="parent" />
 

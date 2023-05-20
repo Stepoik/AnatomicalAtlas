@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:drawable="@color/main_light_blue"/>
-    <item android:drawable="@drawable/loading_screen" android:gravity="center" />
-    <item android:drawable="@drawable/loading_screen_text" android:gravity="center"/>
+    <item android:drawable="?attr/colorPrimaryVariant"/>
+    <item android:gravity="center"
+        android:drawable="@drawable/skeleton_icon"/>
 </layer-list>

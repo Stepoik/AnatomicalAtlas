@@ -4,6 +4,9 @@ import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -50,11 +53,16 @@ public class BodyPartGroupListAdapter extends RecyclerView.Adapter<BodyPartGroup
         holder.bodyPartsRecycler.setAdapter(bodyPartAdapter);
         holder.itemLayout.setOnClickListener(v -> {
             if (holder.bodyPartsRecycler.getAdapter() != null) {
+                int id;
                 if (!holder.isOpened) {
                     listOpener.openGroup(position);
+                    id = R.anim.open_arrow_anim;
                 } else {
                     listOpener.closeGroup(position);
+                    id = R.anim.close_arrow_anim;
                 }
+                Animation rotate = AnimationUtils.loadAnimation(holder.openArrow.getContext(), id);
+                holder.openArrow.startAnimation(rotate);
             }
         });
         if (viewHolderMap.size() == groups.size()){
@@ -104,9 +112,11 @@ public class BodyPartGroupListAdapter extends RecyclerView.Adapter<BodyPartGroup
         TextView groupName;
         View itemLayout;
         RecyclerView bodyPartsRecycler;
+        ImageView openArrow;
         boolean isOpened = false;
         public GroupBodyPartViewHolder(@NonNull View itemView) {
             super(itemView);
+            openArrow = itemView.findViewById(R.id.open_arrow);
             itemLayout = itemView.findViewById(R.id.item_layout);
             groupName = itemView.findViewById(R.id.group_name);
             bodyPartsRecycler = itemView.findViewById(R.id.body_parts);

@@ -4,6 +4,9 @@ import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -45,14 +48,19 @@ public class BodyPartListAdapter extends RecyclerView.Adapter<BodyPartListAdapte
         BodyPart bodyPart = bodyPartList.get(position);
         holder.bodyPartName.setText(bodyPart.getName());
         holder.bodyPartInformation.setText(bodyPart.getInformation());
-        holder.rootView.setOnClickListener(v -> {
+        holder.itemView.setOnClickListener(v -> {
+            int id;
             if (!holder.isOpen) {
                 listOpener.openPart(parentIndex, position);
+                id = R.anim.open_arrow_anim;
             }
             else{
                 listOpener.closePart(parentIndex, position);
                 close(position);
+                id = R.anim.close_arrow_anim;
             }
+            Animation rotate = AnimationUtils.loadAnimation(holder.bodyPartInformation.getContext(), id);
+            holder.openArrow.startAnimation(rotate);
         });
         if (viewHolderMap.size() == bodyPartList.size()){
             listOpener.getOpened().observe(lifecycleOwner, integerSetMap -> {
@@ -99,11 +107,11 @@ public class BodyPartListAdapter extends RecyclerView.Adapter<BodyPartListAdapte
     public class BodyPartViewHolder extends RecyclerView.ViewHolder {
         TextView bodyPartName;
         TextView bodyPartInformation;
-        View rootView;
+        ImageView openArrow;
         boolean isOpen = false;
         public BodyPartViewHolder(@NonNull View itemView) {
             super(itemView);
-            rootView = itemView;
+            openArrow = itemView.findViewById(R.id.open_arrow);
             bodyPartName = itemView.findViewById(R.id.body_part_name);
             bodyPartInformation = itemView.findViewById(R.id.body_part_info);
         }

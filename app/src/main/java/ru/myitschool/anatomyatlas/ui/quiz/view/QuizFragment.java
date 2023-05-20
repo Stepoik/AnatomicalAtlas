@@ -1,5 +1,8 @@
 package ru.myitschool.anatomyatlas.ui.quiz.view;
 
+import android.animation.Animator;
+import android.animation.ObjectAnimator;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +13,7 @@ import androidx.activity.OnBackPressedDispatcher;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
@@ -98,6 +102,25 @@ public class QuizFragment extends Fragment implements UseSkeleton {
         });
         binding.unpause.setOnClickListener(v -> {
             pauseTest(false, true);
+        });
+        viewModel.getAnswerCorrect().observe(getViewLifecycleOwner(), isCorrect -> {
+            Animator animator;
+            if (isCorrect){
+                animator = ObjectAnimator.ofArgb(binding.isAnswerCorrect,
+                        "backgroundColor",
+                        Color.parseColor("#00FF5A5A"),
+                        Color.parseColor("#9A46FF4F"),
+                        Color.parseColor("#00FF5A5A"));
+            }
+            else{
+                animator = ObjectAnimator.ofArgb(binding.isAnswerCorrect,
+                        "backgroundColor",
+                        Color.parseColor("#00FF5A5A"),
+                        Color.parseColor("#97FF5A5A"),
+                        Color.parseColor("#00FF5A5A"));
+            }
+            animator.setDuration(500);
+            animator.start();
         });
     }
     void pauseTest(boolean pause, boolean usePausePanel){

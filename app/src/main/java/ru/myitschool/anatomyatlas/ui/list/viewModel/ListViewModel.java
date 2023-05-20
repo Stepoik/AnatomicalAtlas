@@ -46,6 +46,7 @@ public class ListViewModel extends ViewModel implements ListOpener {
     public void closeGroup(int index) {
         if (openedIndexesContainer.getValue() != null){
             openedIndexesContainer.getValue().remove(index);
+            System.out.println(openedIndexesContainer.getValue());
             openedIndexesContainer.setValue(openedIndexesContainer.getValue());
         }
     }
@@ -65,7 +66,8 @@ public class ListViewModel extends ViewModel implements ListOpener {
             return;
         }
         indexes.add(partIndex);
-        openedIndexesContainer.setValue(new HashMap<>(openedIndexes));
+        openedIndexesContainer.getValue().put(parentIndex, indexes);
+        openedIndexesContainer.setValue(openedIndexesContainer.getValue());
     }
 
     @Override
@@ -78,6 +80,7 @@ public class ListViewModel extends ViewModel implements ListOpener {
             return;
         }
         indexes.remove(partIndex);
-        openedIndexesContainer.setValue(new HashMap<>(openedIndexes));
+        openedIndexesContainer.getValue().put(parentIndex, indexes);
+        openedIndexesContainer.setValue(openedIndexesContainer.getValue());
     }
 }

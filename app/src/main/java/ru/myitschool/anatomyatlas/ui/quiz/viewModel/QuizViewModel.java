@@ -1,5 +1,6 @@
 package ru.myitschool.anatomyatlas.ui.quiz.viewModel;
 
+import android.animation.Animator;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
@@ -29,6 +30,7 @@ public class QuizViewModel extends ViewModel {
     private boolean pause = false;
     private boolean started = false;
     private int progressMax;
+    private MutableLiveData<Boolean> isAnswerCorrect = new MutableLiveData<>();
 
     public QuizViewModel(BodyPartRepository bodyPartRepository, int progressMax) {
         this.progressMax = progressMax;
@@ -68,10 +70,17 @@ public class QuizViewModel extends ViewModel {
         boolean names_equals = Objects.equals(name, currentName);
         if (names_equals){
             score++;
+            isAnswerCorrect.setValue(true);
+        }
+        else{
+            isAnswerCorrect.setValue(false);
         }
         progress.setValue(progressMax);
         bodyPartContainer.setValue(newList);
         return names_equals;
+    }
+    public MutableLiveData<Boolean> getAnswerCorrect(){
+        return isAnswerCorrect;
     }
     public MutableLiveData<Integer> getProgress(){
         return progress;

@@ -1,25 +1,24 @@
 package ru.myitschool.anatomyatlas.ui.study.view;
 
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import android.os.Build;
-import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 
 import java.util.List;
 
+import ru.myitschool.anatomyatlas.databinding.FragmentStudyBinding;
 import ru.myitschool.anatomyatlas.ui.UseSkeleton;
 import ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView;
-import ru.myitschool.anatomyatlas.databinding.FragmentStudyBinding;
 import ru.myitschool.anatomyatlas.ui.study.viewModel.StudyViewModel;
+import ru.myitschool.anatomyatlas.ui.study.viewModel.StudyViewModelFactory;
 
 public class StudyFragment extends Fragment implements UseSkeleton {
     private FragmentStudyBinding binding;
@@ -32,7 +31,7 @@ public class StudyFragment extends Fragment implements UseSkeleton {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        viewModel = new ViewModelProvider(this).get(StudyViewModel.class);
+        viewModel = new ViewModelProvider(this, new StudyViewModelFactory(requireContext())).get(StudyViewModel.class);
         binding = FragmentStudyBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
@@ -56,7 +55,6 @@ public class StudyFragment extends Fragment implements UseSkeleton {
             }
             View v = binding.getRoot().findViewById(id);
             binding.bottomInfo.name.setText(((BodyPartView)v).getName());
-            binding.bottomInfo.content.setText(((BodyPartView)v).getInfo());
             if (selectedView != null){
                 selectedView.stopAnimation();
             }
@@ -67,12 +65,13 @@ public class StudyFragment extends Fragment implements UseSkeleton {
                 bottomSheetBehavior.setState(BottomSheetBehavior.STATE_HALF_EXPANDED);
             }
         });
+        viewModel.getInformationContainer().observe(getViewLifecycleOwner(), s ->
+                binding.bottomInfo.content.setText(s));
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        System.out.println("here");
         bottomSheetBehavior = BottomSheetBehavior.from(binding.bottomInfo.getRoot());
         bottomSheetBehavior.setHalfExpandedRatio(400f/getResources().getDisplayMetrics().heightPixels);
         bottomSheetBehavior.setMaxHeight((int)(getResources().getDisplayMetrics().heightPixels*0.6));
@@ -94,8 +93,9 @@ public class StudyFragment extends Fragment implements UseSkeleton {
         subscribe(listViews);
         for (ViewGroup views: listViews) {
             for (int i = 0; i < views.getChildCount(); i++) {
-                ImageView imageView = (ImageView) views.getChildAt(i);
-                imageView.setOnClickListener(v -> viewModel.setSelected(v.getId()));
+                BodyPartView bodyPartView = (BodyPartView) views.getChildAt(i);
+                bodyPartView.setOnClickListener(v -> viewModel.setSelected(v.getId(),
+                        bodyPartView.getName()));
             }
         }
     }

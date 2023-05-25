@@ -1,4 +1,4 @@
-package ru.myitschool.anatomyatlas.ui;
+package ru.myitschool.anatomyatlas.ui.skeleton;
 
 import android.view.ViewGroup;
 

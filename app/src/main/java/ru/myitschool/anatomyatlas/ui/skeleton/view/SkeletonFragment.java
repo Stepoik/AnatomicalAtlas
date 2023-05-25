@@ -2,24 +2,19 @@ package ru.myitschool.anatomyatlas.ui.skeleton.view;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.SeekBar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.view.ViewCompat;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
 import ru.myitschool.anatomyatlas.databinding.FragmentSkeletonBinding;
-import ru.myitschool.anatomyatlas.ui.UseSkeleton;
+import ru.myitschool.anatomyatlas.ui.skeleton.UseSkeleton;
 import ru.myitschool.anatomyatlas.ui.skeleton.viewModel.SkeletonViewModel;
 
 public class SkeletonFragment extends Fragment {

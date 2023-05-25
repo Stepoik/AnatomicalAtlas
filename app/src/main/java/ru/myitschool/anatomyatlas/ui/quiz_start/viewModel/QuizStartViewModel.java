@@ -17,6 +17,7 @@ public class QuizStartViewModel extends ViewModel {
     private final LiveData<List<BodyPart>> bodyPartContainer;
     private final LiveData<Money> moneyContainer;
     private final int COST = 10;
+
     public QuizStartViewModel(BodyPartRepository repository, MoneyRepository moneyRepository){
         bodyPartRepository = repository;
         this.moneyRepository = moneyRepository;

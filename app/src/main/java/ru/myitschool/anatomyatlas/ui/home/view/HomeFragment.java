@@ -14,7 +14,7 @@ import androidx.navigation.ui.NavigationUI;
 
 import ru.myitschool.anatomyatlas.R;
 import ru.myitschool.anatomyatlas.databinding.FragmentHomeBinding;
-import ru.myitschool.anatomyatlas.ui.NavigateFromChild;
+import ru.myitschool.anatomyatlas.ui.skeleton.NavigateFromChild;
 
 
 public class HomeFragment extends Fragment implements NavigateFromChild {

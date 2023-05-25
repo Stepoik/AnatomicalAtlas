@@ -15,7 +15,7 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import java.util.List;
 
 import ru.myitschool.anatomyatlas.databinding.FragmentStudyBinding;
-import ru.myitschool.anatomyatlas.ui.UseSkeleton;
+import ru.myitschool.anatomyatlas.ui.skeleton.UseSkeleton;
 import ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView;
 import ru.myitschool.anatomyatlas.ui.study.viewModel.StudyViewModel;
 import ru.myitschool.anatomyatlas.ui.study.viewModel.StudyViewModelFactory;

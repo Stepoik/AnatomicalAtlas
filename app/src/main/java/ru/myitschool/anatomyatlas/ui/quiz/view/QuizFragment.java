@@ -13,7 +13,6 @@ import androidx.activity.OnBackPressedDispatcher;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
@@ -22,7 +21,7 @@ import java.util.List;
 
 import ru.myitschool.anatomyatlas.R;
 import ru.myitschool.anatomyatlas.databinding.FragmentQuizBinding;
-import ru.myitschool.anatomyatlas.ui.UseSkeleton;
+import ru.myitschool.anatomyatlas.ui.skeleton.UseSkeleton;
 import ru.myitschool.anatomyatlas.ui.custom_views.BodyPartView;
 import ru.myitschool.anatomyatlas.ui.dialogs.BackDialog;
 import ru.myitschool.anatomyatlas.ui.quiz.viewModel.QuizViewModel;
@@ -109,7 +108,7 @@ public class QuizFragment extends Fragment implements UseSkeleton {
                 animator = ObjectAnimator.ofArgb(binding.isAnswerCorrect,
                         "backgroundColor",
                         Color.parseColor("#00FF5A5A"),
-                        Color.parseColor("#9A46FF4F"),
+                        Color.parseColor("#9D9AFF96"),
                         Color.parseColor("#00FF5A5A"));
             }
             else{

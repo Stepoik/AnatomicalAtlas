@@ -1,14 +1,14 @@
-package ru.myitschool.anatomyatlas;
+package ru.myitschool.anatomyatlas.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
-import androidx.navigation.fragment.NavHostFragment;
 
 import android.os.Bundle;
 
+import ru.myitschool.anatomyatlas.R;
 import ru.myitschool.anatomyatlas.databinding.ActivityMainBinding;
-import ru.myitschool.anatomyatlas.ui.NavigateFromChild;
+import ru.myitschool.anatomyatlas.ui.skeleton.NavigateFromChild;
 
 public class MainActivity extends AppCompatActivity implements NavigateFromChild {
     private ActivityMainBinding binding;
